@@ -110,4 +110,12 @@ ma 30.12.2019 20.48.30 +0200
 
     See part1.8 directory for README containing answer.
 
+[x] 1.9 Submit your used commands for this exercise.
 
+```code
+docker pull devopsdockeruh/ports_exercise
+paavo@silber:~/defa/docker$ docker run -d --name defapart1.9 -p11119:80 devopsdockeruh/ports_exercise
+160864aa69633464c7466d85f7c537c79bd4d0ab9b2ca14ee6227a9ab769d285
+paavo@silber:~/defa/docker$ curl http://localhost:11119/
+Ports configured correctly!!
+```
