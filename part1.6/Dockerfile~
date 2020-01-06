@@ -1,0 +1,24 @@
+# Filename: Dockerfile
+FROM devopsdockeruh/overwrite_cmd_exercise
+LABEL maintainer="Docker student Paavo Muranen <paavo@muranen.fi>"
+COPY ./container_arguments.sh /
+#RUN chmod u+x /container_arguments.sh
+ENV time 999
+
+#ENTRYPOINT ["/container_arguments.sh"]
+CMD ["--clock"]
+
+#CMD [ "sh", "-c", "--clock ${time}" ]
+#ENTRYPOINT ["sh -c", "echo"]
+#CMD [ "pum"]
+#CMD ["--clock ${time}"] # Second argument needs to be a number
+#CMD ["--clock 123"] ## works without parms
+#ENTRYPOINT ["--clock"]
+#CMD ["123"]
+
+
+
+
+
+
+
