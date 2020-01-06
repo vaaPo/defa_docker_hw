@@ -66,6 +66,7 @@ root@silber:/var/lib/docker# date
 ma 30.12.2019 20.48.30 +0200
 ```
 [x] 1.5 Dockerfile(s) and the command 
+    
     See part1.5 directory for README.md containing answer.
 
 
