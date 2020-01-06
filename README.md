@@ -172,6 +172,7 @@ Frontend build and run
 docker build -t vaapo/frontend-example-docker .
 docker run -p5000:5000 vaapo/frontend-example-docker
 ```
-Then browse to http://localhost:5000/ and 
+Then browse to http://localhost:5000/  
+see visual evidence frontend-112-test.png
 
 
