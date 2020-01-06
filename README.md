@@ -183,5 +183,19 @@ $ tree
 └── spring_113_build_run_test.png
 
 0 directories, 2 files
-```code
+```
 
+## [x] 1.14 You’ve completed the exercise when the application works in your browser.
+
+Must admit that this was pretty hard to get done, several trials and fighting with ruby version dependencies.
+It was also annoying to notice that the server name was not consistently named per version.
+Furious googling was needed.
+
+```code
+tree part1.14
+part1.14
+├── Dockerfile
+└── rails-build-run-test.png
+
+0 directories, 2 files
+```
