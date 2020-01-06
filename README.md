@@ -203,3 +203,7 @@ part1.14
 ## [x] 1.15 provide the link to the project in docker hub,  how to run the application in a README
 
 https://hub.docker.com/repository/docker/vaapo/youtube-dl
+
+## [x] 1.16 For this exercise return the url in which the released application is.
+
+https://defadock116.herokuapp.com/
