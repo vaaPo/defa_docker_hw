@@ -132,11 +132,20 @@ Exercise 1.10: Congratulations! You configured your ports correctly!
 
 [x] 1.11 Submit the docker. your used commands for this exercise.
     See part1.11 for Dockerfile
-    
+
 ```code
 docker run -it -v $(pwd)/logs.txt:/usr/src/app/logs.txt -p8000:8000 vaapo/backend-example-docker
 ```
+Check the logs.txt by curling the address
+```code
+$ curl http://localhost:8000
+Port configured correctly, generated message in logs.txt
 
+
+$ tail -f logs.txt 
+1/6/2020, 7:00:48 PM: Connection received in root
+1/6/2020, 7:01:04 PM: Connection received in root
+```
 
 
 
