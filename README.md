@@ -43,28 +43,12 @@ You found the correct password. Secret message is:
 paavo@silber:~/defa/docker$ docker run devopsdockeruh/exec_bash_exercise
 (node:1) ExperimentalWarning: The fs.promises API is experimental
 Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
 ^CClosing file
 paavo@silber:~/defa/docker$ date
 ma 30.12.2019 20.48.42 +0200
----------------------
-MEANWHILE ANOTHER SHELL WINDOW
----------------------
-
+```
+Meanwhile in another shell 
+```code
 root@silber:/var/lib/docker# find . -name logs.txt -print
 ./overlay2/85ed93555427314e88d8df84804ff4f54e47592d378b7b318c41384baef00893/diff/usr/app/logs.txt
 ./overlay2/85ed93555427314e88d8df84804ff4f54e47592d378b7b318c41384baef00893/merged/usr/app/logs.txt
