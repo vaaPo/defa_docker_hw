@@ -80,6 +80,6 @@ ma 30.12.2019 20.48.30 +0200
 
 [x] 1.8 Submit your used commands for this exercise.
 
-```code
-docker run --detach --name defapart18v2 --mount type=bind,source="$(pwd)"/part1.8/log/logs.txt,target=/usr/app/logs.txt devopsdockeruh/first_volume_exercise
-```
+    See part1.8 directory for README containing answer.
+
+
