@@ -31,7 +31,7 @@ $ tree
 
 # PART 1
 
-[x] 1.1 Prove that you have completed this part of exercise by delivering the output for docker ps -a.
+## [x] 1.1 Prove that you have completed this part of exercise by delivering the output for docker ps -a.
 ```code
 paavo@silber:~/defa/docker$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS                   NAMES
