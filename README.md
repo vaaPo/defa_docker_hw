@@ -1,6 +1,34 @@
 # defa_docker_hw
 Defa docker Homeworks, by Paavo Muranen
 
+# Tree - larger exercises have own directory or repository
+
+```code
+$ tree
+.
+├── part1.5
+│   ├── Dockerfile
+│   ├── README.md
+│   └── src
+│       └── run_part1.5.sh
+├── part1.6
+│   ├── Dockerfile
+│   ├── Dockerfile~
+│   └── README.md
+├── part1.7
+│   ├── Dockerfile
+│   ├── README.md
+│   └── src
+│       └── run_part1.7.sh
+├── part1.8
+│   ├── log
+│   │   └── logs.txt
+│   └── README.md
+└── README.md
+
+7 directories, 12 files
+```
+
 # PART 1
 
 [x] 1.1 Prove that you have completed this part of exercise by delivering the output for docker ps -a.
