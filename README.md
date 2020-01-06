@@ -130,6 +130,12 @@ And browse to http://localhost:5000
 
 Exercise 1.10: Congratulations! You configured your ports correctly!
 
+[x] 1.11 Submit the docker. your used commands for this exercise.
+    See part1.11 for Dockerfile
+    
+```code
+docker run -it -v $(pwd)/logs.txt:/usr/src/app/logs.txt -p8000:8000 vaapo/backend-example-docker
+```
 
 
 
