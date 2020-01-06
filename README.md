@@ -207,3 +207,13 @@ https://hub.docker.com/repository/docker/vaapo/youtube-dl
 ## [x] 1.16 For this exercise return the url in which the released application is.
 
 https://defadock116.herokuapp.com/
+
+## [x] 1.17 Explain what you created and publish it to Docker Hub.
+I am pretty excited about the anaconda jupyter notebooks, so created this small docker with notebook on it.
+Because it takes lots of energy to install the notebook to certain environments, thought maybe this could make it easier.
+
+```code
+docker pull vaapo/defa_docker_part117
+mkdir notebooks
+docker run -it -v $pwd/notebooks:/notebooks -p 8888:8888 vaapo/defa_docker_part117
+```
