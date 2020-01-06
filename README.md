@@ -46,14 +46,14 @@ paavo@silber:~/defa/docker$ curl localhost:11113
 <head>
 ...
 ```
-[x] 1.2 Prove that you have completed this part of exercise by delivering the output for docker ps -a and docker images
+## [x] 1.2 Prove that you have completed this part of exercise by delivering the output for docker ps -a and docker images
 ```code
 paavo@silber:~/defa/docker$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 paavo@silber:~/defa/docker$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ```
-[x] 1.3 Submit the secret message and command(s) given to get it as your answer.
+## [x] 1.3 Submit the secret message and command(s) given to get it as your answer.
 ```code
 paavo@silber:~/defa/docker$ git clone https://github.com/docker-hy/docs-exercise.git
 paavo@silber:~/defa/docker$ docker pull devopsdockeruh/pull_exercise
@@ -66,7 +66,7 @@ Give me the password: basics
 You found the correct password. Secret message is:
 "This is the secret message"
 ```
-[x] 1.4 Submit the secret message and command(s) given as your answer.
+## [x] 1.4 Submit the secret message and command(s) given as your answer.
 ```code
 paavo@silber:~/defa/docker$ docker run devopsdockeruh/exec_bash_exercise
 (node:1) ExperimentalWarning: The fs.promises API is experimental
@@ -93,24 +93,24 @@ Mon, 30 Dec 2019 18:48:19 GMT
 root@silber:/var/lib/docker# date
 ma 30.12.2019 20.48.30 +0200
 ```
-[x] 1.5 Dockerfile(s) and the command 
+## [x] 1.5 Dockerfile(s) and the command 
     
     See part1.5 directory for README.md containing answer.
 
 
-[x] 1.6 Add a CMD line to the Dockerfile and tag it as “docker-clock” so that docker run docker-clock starts the application and the clock output
+## [x] 1.6 Add a CMD line to the Dockerfile and tag it as “docker-clock” so that docker run docker-clock starts the application and the clock output
 
     See part1.6 directory for README containing answer.
 
-[x] 1.7 Run command docker run [options] curler (with correct flags again, as in 1.5) and input helsinki.fi into it. Output should match the 1.5 one.
+## [x] 1.7 Run command docker run [options] curler (with correct flags again, as in 1.5) and input helsinki.fi into it. Output should match the 1.5 one.
 
     Actually this is having the same answer as I had in 1.5 but see part1.7 directory for solution.
 
-[x] 1.8 Submit your used commands for this exercise.
+## [x] 1.8 Submit your used commands for this exercise.
 
     See part1.8 directory for README containing answer.
 
-[x] 1.9 Submit your used commands for this exercise.
+## [x] 1.9 Submit your used commands for this exercise.
 
 ```code
 docker pull devopsdockeruh/ports_exercise
@@ -119,7 +119,7 @@ paavo@silber:~/defa/docker$ docker run -d --name defapart1.9 -p11119:80 devopsdo
 paavo@silber:~/defa/docker$ curl http://localhost:11119/
 Ports configured correctly!!
 ```
-[x] 1.10 Submit the Dockerfile. your used commands for this exercise.
+## [x] 1.10 Submit the Dockerfile. your used commands for this exercise.
 
     See part1.10 for Dockerfile
 ```code
@@ -130,7 +130,7 @@ And browse to http://localhost:5000
 
 Exercise 1.10: Congratulations! You configured your ports correctly!
 
-[x] 1.11 Submit the docker. your used commands for this exercise.
+## [x] 1.11 Submit the docker. your used commands for this exercise.
     See part1.11 for Dockerfile
 
 ```code
