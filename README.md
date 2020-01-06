@@ -119,3 +119,19 @@ paavo@silber:~/defa/docker$ docker run -d --name defapart1.9 -p11119:80 devopsdo
 paavo@silber:~/defa/docker$ curl http://localhost:11119/
 Ports configured correctly!!
 ```
+[x] 1.10 Submit the Dockerfile. your used commands for this exercise.
+
+    See part1.10 for Dockerfile
+```code
+docker build -t vaapo/frontend-example-docker .
+docker run -p5000:5000 vaapo/frontend-example-docker
+```
+And browse to http://localhost:5000
+
+Exercise 1.10: Congratulations! You configured your ports correctly!
+
+
+
+
+
+
