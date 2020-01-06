@@ -24,6 +24,20 @@ paavo@silber:~/defa/docker$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 paavo@silber:~/defa/docker$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-...
 ```
+[x] 1.3 Submit the secret message and command(s) given to get it as your answer.
+```code
+paavo@silber:~/defa/docker$ git clone https://github.com/docker-hy/docs-exercise.git
+paavo@silber:~/defa/docker$ docker pull devopsdockeruh/pull_exercise
+paavo@silber:~/defa/docker$ ls docs-exercise/
+Dockerfile  index.js  README.md
+paavo@silber:~/defa/docker$ cat docs-exercise/README.md 
+This is the readme, use input "basics" to complete this exercise.
+paavo@silber:~/defa/docker$ docker run -it devopsdockeruh/pull_exercise
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+```
+
+
 
