@@ -175,4 +175,13 @@ docker run -p5000:5000 vaapo/frontend-example-docker
 Then browse to http://localhost:5000/  
 see visual evidence frontend-112-test.png
 
+## [x] 1.13 You’ve completed the exercise when you see a ‘Success’ message in your browser.
+```code
+$ tree
+.
+├── Dockerfile
+└── spring_113_build_run_test.png
+
+0 directories, 2 files
+```code
 
