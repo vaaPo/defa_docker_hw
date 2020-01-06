@@ -130,7 +130,7 @@ And browse to http://localhost:5000
 
 Exercise 1.10: Congratulations! You configured your ports correctly!
 
-## [x] 1.11 Submit the docker. your used commands for this exercise.
+## [x] 1.11 Submit the Dockerfile. your used commands for this exercise.
     See part1.11 for Dockerfile
 
 ```code
@@ -146,7 +146,32 @@ $ tail -f logs.txt
 1/6/2020, 7:00:48 PM: Connection received in root
 1/6/2020, 7:01:04 PM: Connection received in root
 ```
+## [x] 1.12 Submit the Dockerfiles. your used commands for this exercise.
+No change for the backend.
+```
+ tree
+.
+├── backend
+│   └── Dockerfile
+├── frontend
+│   └── Dockerfile
+└── frontend-112-test.png
 
+2 directories, 3 files
+```
 
+Backend build and run - as in previous 1.11 exercise, no change:
+```code
+
+sudo /etc/init.d/webfs stop
+docker run -it -v $(pwd)/logs.txt:/usr/src/app/logs.txt -p8000:8000 vaapo/backend-example-docker
+```
+
+Frontend build and run
+```code
+docker build -t vaapo/frontend-example-docker .
+docker run -p5000:5000 vaapo/frontend-example-docker
+```
+Then browse to http://localhost:5000/ and 
 
 

@@ -3,9 +3,9 @@
 # example
 
 
-paavo@silber:~/defa/docker/backend-example-docker$ docker run -it -v /home/paavo/defa/docker/backend-example-docker/logs.txt:/logs.txt -p8000:8000 vaapo/backend-example-docker
-docker: Error response from daemon: driver failed programming external connectivity on endpoint optimistic_black (f64934659919aa9e1b96891af7084ba0cfdc53b851b8e5eb7fcd35b61f5e186b): Error starting userland proxy: listen tcp 0.0.0.0:8000: bind: address already in use.
-ERRO[0000] error waiting for container: context canceled 
+## Fix address already in use 
+```code
+(f64934659919aa9e1b96891af7084ba0cfdc53b851b8e5eb7fcd35b61f5e186b): Error starting userland proxy: listen tcp 0.0.0.0:8000: bind: address already in use.
 paavo@silber:~/defa/docker/backend-example-docker$ netstat -tulpn
 (Not all processes could be identified, non-owned process info
  will not be shown, you would have to be root to see it all.)
@@ -66,8 +66,9 @@ tammi 06 11:35:25 silber systemd[1]: Started LSB: Webfs simple HTTP server.
 
 paavo@silber:~/defa/docker/backend-example-docker$ sudo /etc/init.d/webfs stop
 [ ok ] Stopping webfs (via systemctl): webfs.service.
-
-
+```
+## run backend
+```code
 paavo@silber:~/defa/docker/backend-example-docker$ docker run -it -v $(pwd)/logs.txt:/usr/src/app/logs.txt -p8000:8000 vaapo/backend-example-docker
 
 > backend-example-docker@1.0.0 start /usr/src/app
@@ -75,7 +76,10 @@ paavo@silber:~/defa/docker/backend-example-docker$ docker run -it -v $(pwd)/logs
 
 Browserslist: caniuse-lite is outdated. Please run next command `npm update caniuse-lite browserslist`
 Started on port 8000
+```
 
+## test backend
+```code
 $ curl http://localhost:8000
 Port configured correctly, generated message in logs.txt
 
@@ -83,3 +87,4 @@ Port configured correctly, generated message in logs.txt
 paavo@silber:~/defa/docker/backend-example-docker$ tail -f logs.txt 
 1/6/2020, 7:00:48 PM: Connection received in root
 1/6/2020, 7:01:04 PM: Connection received in root
+```
