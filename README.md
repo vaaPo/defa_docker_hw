@@ -43,6 +43,7 @@ You found the correct password. Secret message is:
 paavo@silber:~/defa/docker$ docker run devopsdockeruh/exec_bash_exercise
 (node:1) ExperimentalWarning: The fs.promises API is experimental
 Wrote to file /usr/app/logs.txt
+...clips..
 ^CClosing file
 paavo@silber:~/defa/docker$ date
 ma 30.12.2019 20.48.42 +0200
@@ -53,14 +54,7 @@ root@silber:/var/lib/docker# find . -name logs.txt -print
 ./overlay2/85ed93555427314e88d8df84804ff4f54e47592d378b7b318c41384baef00893/diff/usr/app/logs.txt
 ./overlay2/85ed93555427314e88d8df84804ff4f54e47592d378b7b318c41384baef00893/merged/usr/app/logs.txt
 root@silber:/var/lib/docker# tail -f ./overlay2/85ed93555427314e88d8df84804ff4f54e47592d378b7b318c41384baef00893/merged/usr/app/logs.txt
-Mon, 30 Dec 2019 18:47:48 GMT
-Mon, 30 Dec 2019 18:47:51 GMT
-Mon, 30 Dec 2019 18:47:54 GMT
-Mon, 30 Dec 2019 18:47:58 GMT
-Secret message is:
-"Docker is easy"
-Mon, 30 Dec 2019 18:48:04 GMT
-Mon, 30 Dec 2019 18:48:07 GMT
+...clips..
 Mon, 30 Dec 2019 18:48:10 GMT
 Mon, 30 Dec 2019 18:48:13 GMT
 Secret message is:
