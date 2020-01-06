@@ -70,4 +70,16 @@ ma 30.12.2019 20.48.30 +0200
     See part1.5 directory for README.md containing answer.
 
 
+[x] 1.6 Add a CMD line to the Dockerfile and tag it as “docker-clock” so that docker run docker-clock starts the application and the clock output
 
+    See part1.6 directory for README containing answer.
+
+[x] 1.7 Run command docker run [options] curler (with correct flags again, as in 1.5) and input helsinki.fi into it. Output should match the 1.5 one.
+
+    Actually this is having the same answer as I had in 1.5 but see part1.7 directory for solution.
+
+[x] 1.8 Submit your used commands for this exercise.
+
+```code
+docker run --detach --name defapart18v2 --mount type=bind,source="$(pwd)"/part1.8/log/logs.txt,target=/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+```
