@@ -3,7 +3,7 @@ Defa docker Homeworks, by Paavo Muranen
 
 # PART 1
 
-- [x] 1.1 Prove that you have completed this part of exercise by delivering the output for docker ps -a.
+[x] 1.1 Prove that you have completed this part of exercise by delivering the output for docker ps -a.
 ```code
 paavo@silber:~/defa/docker$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS                   NAMES
@@ -18,3 +18,12 @@ paavo@silber:~/defa/docker$ curl localhost:11113
 <head>
 ...
 ```
+[x] 1.2 Prove that you have completed this part of exercise by delivering the output for docker ps -a and docker images
+```code
+paavo@silber:~/defa/docker$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+paavo@silber:~/defa/docker$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+...
+```
+
