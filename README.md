@@ -215,5 +215,5 @@ Because it takes lots of energy to install the notebook to certain environments,
 ```code
 docker pull vaapo/defa_docker_part117
 mkdir notebooks
-docker run -it -v $pwd/notebooks:/notebooks -p 8888:8888 vaapo/defa_docker_part117
+docker run -it -v $(pwd)/notebooks:/notebooks -p 8888:8888 vaapo/defa_docker_part117
 ```
