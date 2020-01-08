@@ -217,3 +217,7 @@ docker pull vaapo/defa_docker_part117
 mkdir notebooks
 docker run -it -v $(pwd)/notebooks:/notebooks -p 8888:8888 vaapo/defa_docker_part117
 ```
+
+# PART 2
+
+## [x] 2.1 Submit the docker-compose.yml, make sure that it works simply by running docker-compose up
