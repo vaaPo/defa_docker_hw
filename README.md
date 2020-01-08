@@ -236,4 +236,6 @@ Based on 1.12 backend and frontend Dockerfiles constructed part2.3 directory
 
 ![see screenshotfile](./part2.3/compose-frontend-backend-2.3-test.png?raw=true "part2.2/ports_exercise/ports_2.1-test.png")
 
+## [x] 2.4 Your task is to scale the compute containers so that the button in the application turns green.
+
 

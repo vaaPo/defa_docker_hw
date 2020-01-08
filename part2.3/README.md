@@ -1,4 +1,4 @@
-# # Exercise 2.1 ports_exercise README
+# # Exercise 2.3 compose backend frontend services README
 
 Cloned the following github repositories and used the answer Dockerfiles from exercises 1.11 and 1.12
 
