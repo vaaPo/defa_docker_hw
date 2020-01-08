@@ -1,0 +1,24 @@
+version: '3.5' 
+
+services: 
+    backend:
+      image: vaapo/backend-example-docker
+      build:
+        context: ./backend-example-docker
+        dockerfile: Dockerfile
+      ports: 
+        - 8000:8000
+      container_name: backend-example-docker
+    frontend:
+      image: vaapo/frontend-example-docker
+      build:
+        context: ./frontend-example-docker
+        dockerfile: Dockerfile
+      environment:
+        - API_URL=http://localhost:8000
+      ports: 
+        - 5000:5000
+      depends_on: 
+        - backend
+      container_name: frontend-example-docker
+
