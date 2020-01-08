@@ -240,3 +240,6 @@ Based on 1.12 backend and frontend Dockerfiles constructed part2.3 directory
 
 Scaling to 200 is not good idea :)
 ![see screenshotfile](./part2.4/AFTER-scaled-10-compute.png?raw=true "AFTER-scaled-10-compute.png?")
+
+## [x] 2.5 Add redis to example backend. Submit the docker-compose.yml
+
