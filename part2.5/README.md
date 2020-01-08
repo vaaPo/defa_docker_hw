@@ -4,6 +4,8 @@ Cloned the following github repositories and used the answer from exercise 2.3.
 
 Glory for the backend and frontend goes to Helsinki https://github.com/docker-hy
 
+And https://hub.docker.com/_/redis/
+
 
 
 # FILES
@@ -12,6 +14,7 @@ Glory for the backend and frontend goes to Helsinki https://github.com/docker-hy
 ```
 
 # Setup
+Compose does the magic.
 ```code
 ```
 # RUN
@@ -20,6 +23,8 @@ docker-compose up
 ```
 
 # test
+
+curl http://localhost:5000/slow
 
 Check with browser http://localhost:5000/
 

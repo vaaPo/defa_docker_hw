@@ -1,13 +1,24 @@
 version: '3.5' 
 
 services: 
+    redis:
+      image: "redis:alpine"
+      expose:
+        - 6379
+      ports:
+        - 6379:6379
     backend:
       image: vaapo/backend-example-docker
       build:
         context: ./backend-example-docker
         dockerfile: Dockerfile
+      environment: 
+        - REDIS=localhost
+        - REDIS_PORT=6379
       ports: 
         - 8000:8000
+      links: 
+        - redis
       container_name: backend-example-docker
     frontend:
       image: vaapo/frontend-example-docker
@@ -21,4 +32,3 @@ services:
       depends_on: 
         - backend
       container_name: frontend-example-docker
-
