@@ -12,55 +12,91 @@ https://github.com/docker-hy/frontend-example-docker
 # FILES
 
 ```code
- tree
+tree
 .
-├── README.md
-└── scaling-exercise
-    ├── calculator
-    │   ├── babel.config.js
-    │   ├── Dockerfile
-    │   ├── package.json
-    │   ├── package-lock.json
-    │   ├── src
-    │   │   ├── commons.js
-    │   │   ├── components
-    │   │   │   ├── App.js
-    │   │   │   ├── Playground.js
-    │   │   │   └── Test.js
-    │   │   ├── index.html
-    │   │   └── index.js
-    │   └── webpack.config.js
-    ├── compute
-    │   ├── Dockerfile
-    │   ├── index.js
-    │   ├── package.json
-    │   └── package-lock.json
-    ├── docker-compose.yml
-    └── load-balancer
-        └── Dockerfile
+├── backend-example-docker
+│   ├── config.js
+│   ├── Dockerfile
+│   ├── index.js
+│   ├── logs.txt
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   └── server
+│       ├── controllers
+│       │   └── messageController.js
+│       ├── database
+│       │   └── connection.js
+│       ├── index.js
+│       ├── models
+│       │   └── message.js
+│       ├── redis.js
+│       └── routes.js
+├── compose-frontend-backend-2.3-test.png
+├── docker-compose.yml
+├── frontend-example-docker
+│   ├── config.js
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   ├── src
+│   │   ├── assets
+│   │   │   ├── custom.css
+│   │   │   ├── toscalogo_black.svg
+│   │   │   ├── toscalogo_color.svg
+│   │   │   ├── toscalogo_grayscale.svg
+│   │   │   └── toscalogo_white.svg
+│   │   ├── components
+│   │   │   ├── App.js
+│   │   │   ├── ExercisesList
+│   │   │   │   ├── ExerciseAmIRunning.js
+│   │   │   │   ├── ExerciseBackendConnection.js
+│   │   │   │   ├── ExerciseDBConnection.js
+│   │   │   │   ├── ExerciseNginxSetup.js
+│   │   │   │   ├── ExerciseRedisSetup.js
+│   │   │   │   └── index.js
+│   │   │   ├── Footer.js
+│   │   │   ├── NavBar.js
+│   │   │   ├── OnlyView.js
+│   │   │   └── Router.js
+│   │   ├── index.js
+│   │   └── util
+│   │       ├── apiConnection.js
+│   │       ├── common.js
+│   │       ├── redux
+│   │       │   ├── index.js
+│   │       │   ├── messageReducer.js
+│   │       │   └── simpleReducer.js
+│   │       └── store.js
+│   ├── util
+│   │   └── common.js
+│   └── webpack.config.js
+└── README.md
 
-6 directories, 18 files
+13 directories, 46 files
 ```
 
 # Setup
 ```code
-git clone git@github.com:docker-hy/scaling-exercise.git
-
 git clone git@github.com:docker-hy/backend-example-docker.git
-cd backend-example-docker 
-cd scaling-exercise/
+cd backend-example-docker
 rm -rf .git
+wget https://raw.githubusercontent.com/vaaPo/defa_docker_hw/master/part1.12/backend/Dockerfile
+git@github.com:docker-hy/frontend-example-docker.git
+cd frontend-example-docker
+rm -rf .git
+wget https://raw.githubusercontent.com/vaaPo/defa_docker_hw/master/part1.12/frontend/Dockerfile
+cd ..
 ```
 # RUN
 ```code
 docker-compose up
 ```
-WARNING: Image for service compute was built because it did not already exist.
- To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
 
 # test
 
-Check with browser http://localhost:3000
+Check with browser http://localhost:5000/
 
 Screenshot of working setup:
 ![see screenshotfile](./compose-frontend-backend-2.3-test.png?raw=true "part2.2/ports_exercise/ports_2.1-test.png")
