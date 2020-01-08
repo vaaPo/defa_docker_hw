@@ -1,6 +1,7 @@
 # Exercise 2.4 scaling-exercise README
 Glory goes to Helsinki https://github.com/docker-hy
 and 
+
 https://github.com/docker-hy/scaling-exercise
 
 
@@ -40,9 +41,6 @@ https://github.com/docker-hy/scaling-exercise
 # Setup
 ```code
 git clone git@github.com:docker-hy/scaling-exercise.git
-
-git clone git@github.com:docker-hy/backend-example-docker.git
-cd backend-example-docker 
 cd scaling-exercise/
 rm -rf .git
 ```
@@ -53,9 +51,8 @@ docker-compose up
 
 # test
 
-Check with browser http://localhost:5000/ 
+Check with browser http://localhost:3000/ 
 
 Screenshot of working setup:
-![see screenshotfile](./compose-frontend-backend-2.3-test.png?raw=true "part2.2/ports_exercise/ports_2.1-test.png")
-
+![see screenshotfile](./BEFORE-non-scaled-2.4.png?raw=true "BEFORE-non-scaled-2.4.png")
 
