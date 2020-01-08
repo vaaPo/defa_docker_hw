@@ -228,4 +228,5 @@ See part2.1/first_volume_exercise for answer
 ```
 
 ## [x] 2.2 Submit the docker-compose.yml, make sure that it works simply by running docker-compose up
-
+See part2.2/ports_exercises for answer
+![see screenshotfile](./part2.2/ports_exercise/ports_2.1-test.png?raw=true "ports_2.1-test.png")
