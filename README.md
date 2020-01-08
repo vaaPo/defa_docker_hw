@@ -226,3 +226,6 @@ See part2.1/first_volume_exercise for answer
     Secret message is:
     "Volume bind mount is easy"
 ```
+
+## [x] 2.2 Submit the docker-compose.yml, make sure that it works simply by running docker-compose up
+

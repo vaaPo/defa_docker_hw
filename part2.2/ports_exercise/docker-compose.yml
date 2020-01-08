@@ -1,0 +1,11 @@
+version: '3.5' 
+
+services: 
+   first_volume_exercise:
+      image: devopsdockeruh/ports_exercise
+      build: . 
+      ports: 
+        - 18001:80 
+      container_name: ports_exercise
+      
+      
