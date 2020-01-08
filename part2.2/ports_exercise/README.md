@@ -1,4 +1,4 @@
-# # Exercise 2.1 ports_exercise README
+# # Exercise 2.2 ports_exercise README
 
 # FILES
 ```code
@@ -36,5 +36,5 @@ Stopping ports_exercise ... done
 paavo@silber:~/defa/defa_docker_hw/part2.2/ports_exercise$ 
 ```
 
-## answer, see screenshotfile ports_2.1-test.png
-![see screenshotfile](./ports_2.1-test.png?raw=true "ports_2.1-test.png")
+## answer
+![see screenshotfile](./ports_2.2-test.png?raw=true "ports_2.2-test.png")

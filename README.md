@@ -229,7 +229,7 @@ See part2.1/first_volume_exercise for answer
 
 ## [x] 2.2 Submit the docker-compose.yml, make sure that it works simply by running docker-compose up
 See part2.2/ports_exercises for answer
-![see screenshotfile](./part2.2/ports_exercise/ports_2.1-test.png?raw=true "ports_2.1-test.png")
+![see screenshotfile](./part2.2/ports_exercise/ports_2.2-test.png?raw=true "ports_2.2-test.png")
 
 ## [x] 2.3 Submit the docker-compose.yml
 Based on 1.12 backend and frontend Dockerfiles constructed part2.3 directory
