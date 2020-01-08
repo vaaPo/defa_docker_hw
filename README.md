@@ -239,4 +239,4 @@ Based on 1.12 backend and frontend Dockerfiles constructed part2.3 directory
 ## [x] 2.4 Your task is to scale the compute containers so that the button in the application turns green.
 
 Scaling to 200 is not good idea :)
-![see screenshotfile](./part2.4/scaling-exercise/AFTER-scaled-10-compute.png?raw=true "AFTER-scaled-10-compute.png")
+![see screenshotfile](./part2.4/scaling-exercise/AFTER-scaled-10-compute.png?raw=true "part2.4/scaling-exercise/AFTER-scaled-10-compute.png?")
