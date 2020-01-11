@@ -20,11 +20,13 @@ services:
         - REDIS_PORT=6379
       ports: 
         - 8000:8000
+      depends_on:
+        - redis
       networks:
         - redis
       container_name: backend-example-docker
     frontend:
-      image: vaapo/frontend-example-docker
+      image: vaapo/frontend-example-docker  
       build:
         context: ./frontend-example-docker
         dockerfile: Dockerfile
