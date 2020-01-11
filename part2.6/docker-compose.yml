@@ -3,6 +3,7 @@ version: '3.5'
 services: 
     db:
       image: postgres
+      hostname: db
       restart: always
       environment:
         POSTGRES_USER: kuikka
@@ -34,7 +35,7 @@ services:
         - DB_PASSWORD=koponen
         - DB_NAME=defadockerdb
         # defaults to DB_USERNAME if not set.
-        - DB_HOST=localhost 
+        - DB_HOST=db 
         #<hostname>` defaults to "localhost" if not set.
       ports: 
         - 8000:8000
