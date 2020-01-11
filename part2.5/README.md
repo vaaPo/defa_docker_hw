@@ -17,6 +17,11 @@ And https://hub.docker.com/_/redis/
 Compose does the magic.
 ```code
 ```
+    Asked Telegram about the need of networks definition because it seems that it works also without it.
+    It seems that docker has implicit network on when it is built, so it is not needed.
+    The redis environment REDIS= definition is a bit misleading, could it be REDIS_HOST ?
+    
+    
 # RUN
 ```code
 docker-compose up

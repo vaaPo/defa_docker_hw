@@ -239,7 +239,11 @@ Based on 1.12 backend and frontend Dockerfiles constructed part2.3 directory
 ## [x] 2.4 Your task is to scale the compute containers so that the button in the application turns green.
 
 Scaling to 200 is not good idea :)
+
 ![see screenshotfile](./part2.4/AFTER-scaled-10-compute.png?raw=true "AFTER-scaled-10-compute.png?")
 
 ## [x] 2.5 Add redis to example backend. Submit the docker-compose.yml
 
+Screenshot of working setup:
+
+![see screenshotfile](./part2.5/redis-2.5.png?raw=true "./redis-2.5.png")
