@@ -244,6 +244,11 @@ Scaling to 200 is not good idea :)
 
 ## [x] 2.5 Add redis to example backend. Submit the docker-compose.yml
 
-Screenshot of working setup:
+See part2.5-directory. Screenshot of working setup:
 
 ![see screenshotfile](./part2.5/redis-2.5.png?raw=true "./redis-2.5.png")
+
+## [x] 2.6 Add database to example backend.
+    The button won’t turn green but you can send messages to yourself.
+    Submit the docker-compose.yml
+    

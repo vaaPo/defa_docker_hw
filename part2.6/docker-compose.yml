@@ -1,0 +1,49 @@
+version: '3.5' 
+
+services: 
+    redis:
+      image: "redis:alpine"
+      hostname: redis
+      expose:
+        - 6379
+      networks:
+        - redis
+      container_name: redis_container
+    backend:
+      image: vaapo/backend-example-docker
+      hostname: backend
+      build:
+        context: ./backend-example-docker
+        dockerfile: Dockerfile
+      environment: 
+        - REDIS=redis
+        - REDIS_PORT=6379
+        - DB_USERNAME=kuikka
+        - DB_PASSWORD=koponen
+        - DB_NAME=defadockerdb
+        # defaults to DB_USERNAME if not set.
+        - DB_HOST=localhost 
+        #<hostname>` defaults to "localhost" if not set.
+
+      ports: 
+        - 8000:8000
+      depends_on:
+        - redis
+      networks:
+        - redis
+      container_name: backend-example-docker
+    frontend:
+      image: vaapo/frontend-example-docker  
+      build:
+        context: ./frontend-example-docker
+        dockerfile: Dockerfile
+      environment:
+        - API_URL=http://localhost:8000
+      ports: 
+        - 5000:5000
+      depends_on: 
+        - backend
+      container_name: frontend-example-docker
+networks:
+  redis:
+    driver: bridge
