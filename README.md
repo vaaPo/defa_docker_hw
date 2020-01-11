@@ -251,4 +251,4 @@ See part2.5-directory. Screenshot of working setup:
 ## [x] 2.6 Add database to example backend.
     The button won’t turn green but you can send messages to yourself.
     Submit the docker-compose.yml
-    ![see screenshotfile](./part2.6/db-2.6.png?raw=true "./db-2.6.png")
+![see screenshotfile](./part2.6/db-2.6.png?raw=true "./db-2.6.png")
