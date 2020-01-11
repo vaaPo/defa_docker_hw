@@ -3,21 +3,24 @@ version: '3.5'
 services: 
     redis:
       image: "redis:alpine"
+      hostname: redis
       expose:
         - 6379
-      ports:
-        - 6379:6379
+      networks:
+        - redis
+      container_name: redis_container
     backend:
       image: vaapo/backend-example-docker
+      hostname: backend
       build:
         context: ./backend-example-docker
         dockerfile: Dockerfile
       environment: 
-        - REDIS=localhost
+        - REDIS=redis
         - REDIS_PORT=6379
       ports: 
         - 8000:8000
-      links: 
+      networks:
         - redis
       container_name: backend-example-docker
     frontend:
@@ -32,3 +35,6 @@ services:
       depends_on: 
         - backend
       container_name: frontend-example-docker
+networks:
+  redis:
+    driver: bridge
