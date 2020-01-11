@@ -5,6 +5,8 @@ services:
       image: postgres
       hostname: db
       restart: always
+      networks:
+        - redis
       environment:
         POSTGRES_USER: kuikka
         POSTGRES_PASSWORD: koponen
@@ -41,6 +43,7 @@ services:
         - 8000:8000
       depends_on:
         - redis
+        - db
       networks:
         - redis
       container_name: backend-example-docker6
