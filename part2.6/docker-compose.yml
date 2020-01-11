@@ -1,6 +1,18 @@
 version: '3.5' 
 
 services: 
+    db:
+      image: postgres
+      restart: always
+      environment:
+        POSTGRES_USER: kuikka
+        POSTGRES_PASSWORD: koponen
+        POSTGRES_DB: defadockerdb
+    adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8080:8080
     redis:
       image: "redis:alpine"
       hostname: redis
@@ -8,7 +20,7 @@ services:
         - 6379
       networks:
         - redis
-      container_name: redis_container
+      container_name: redis_container6
     backend:
       image: vaapo/backend-example-docker
       hostname: backend
@@ -24,14 +36,13 @@ services:
         # defaults to DB_USERNAME if not set.
         - DB_HOST=localhost 
         #<hostname>` defaults to "localhost" if not set.
-
       ports: 
         - 8000:8000
       depends_on:
         - redis
       networks:
         - redis
-      container_name: backend-example-docker
+      container_name: backend-example-docker6
     frontend:
       image: vaapo/frontend-example-docker  
       build:
@@ -43,7 +54,7 @@ services:
         - 5000:5000
       depends_on: 
         - backend
-      container_name: frontend-example-docker
+      container_name: frontend-example-docker6
 networks:
   redis:
     driver: bridge
