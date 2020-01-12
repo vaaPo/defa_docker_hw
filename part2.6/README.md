@@ -32,3 +32,7 @@ docker-compose up
 Screenshot of working setup:
 ![see screenshotfile](./db-2.6.png?raw=true "./db-2.6.png")
 
+# Check adminer with browser http://localhost:8080/
+    ![see screenshotfile](./adminer-select-messages-2.6.png?raw=true "./../adminer-select-messages-2.6.png")
+
+
