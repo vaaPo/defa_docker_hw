@@ -31,3 +31,4 @@ docker-compose up
 Screenshot of working setup:
 ![see screenshotfile](./nginx-proxy-2.8.png?raw=true "./nginx-proxy-2.8.png")
 
+
