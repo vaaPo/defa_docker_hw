@@ -253,3 +253,4 @@ See part2.5-directory. Screenshot of working setup:
     Submit the docker-compose.yml
 ![see screenshotfile](./part2.6/db-2.6.png?raw=true "./db-2.6.png")
 ![see screenshotfile](./part2.6/adminer-select-messages-2.6.png?raw=true "adminer-select-messages-2.6.png")
+![see screenshotfile](./part2.6/psql-vs-adminer.png?raw=true "./../psql-vs-adminer.png")
