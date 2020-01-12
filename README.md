@@ -263,3 +263,7 @@ See part2.5-directory. Screenshot of working setup:
     based on 2.6
 
 ![see screenshotfile](./part2.8/nginx-proxy-2.8.png?raw=true "./nginx-proxy-2.8.png")
+
+## [x] 2.9 Volumes for database and redis
+    based on 2.6, because 2.8 cant be used to test this
+    
