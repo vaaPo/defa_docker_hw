@@ -1,0 +1,56 @@
+version: '3.5' 
+
+services:
+    kurkkumopo-backend:
+        image: vaapo/ml-kurkkumopo-backend
+        build:
+          context: ./ml-kurkkumopo-backend
+          dockerfile: Dockerfile
+        environment:
+            - EXCERCISE_ENV=part2.7
+        hostname:
+            localhost
+        networks:
+            - kurkkumopo
+        ports:
+            - 5000:5000
+        volumes:
+            - model:/src/model
+            - imgs:/src/imgs
+        container_name: ml-kurkkumopo-backend
+    kurkkumopo-frontend:
+        image: vaapo/ml-kurkkumopo-frontend
+        build:
+            context: ./ml-kurkkumopo-frontend
+            dockerfile: Dockerfile
+        depends_on: 
+            - kurkkumopo-training
+            - kurkkumopo-backend
+        restart: unless-stopped
+        environment:
+            - EXCERCISE_ENV=part2.7
+        networks: 
+            - kurkkumopo
+        ports:
+            - 3000:3000
+        container_name: ml-kurkkumopo-frontend
+    kurkkumopo-training:
+        image: vaapo/ml-kurkkumopo-training
+        build:
+            context: ./ml-kurkkumopo-training
+            dockerfile: Dockerfile
+        environment:
+            - EXCERCISE_ENV=part2.7
+        restart: unless-stopped
+        networks:
+            - kurkkumopo
+        volumes:
+            - model:/src/model
+            - imgs:/src/imgs
+        container_name: ml-kurkkumopo-training
+volumes:
+    model:
+    imgs:
+networks:
+    kurkkumopo:
+        driver: bridge

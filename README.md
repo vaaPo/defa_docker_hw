@@ -254,3 +254,7 @@ See part2.5-directory. Screenshot of working setup:
 ![see screenshotfile](./part2.6/db-2.6.png?raw=true "./db-2.6.png")
 ![see screenshotfile](./part2.6/adminer-select-messages-2.6.png?raw=true "adminer-select-messages-2.6.png")
 ![see screenshotfile](./part2.6/psql-vs-adminer.png?raw=true "./../psql-vs-adminer.png")
+
+## [x] 2.7 Configure a machine learning project.
+
+![see screenshotfile](./part2.7/machine_learning-2.7.png?raw=true "./../machine_learning-2.7.png")
