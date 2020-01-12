@@ -135,75 +135,43 @@ Screenshot of working setup:
     -rw-r--r--    1 redis    redis          125 Jan 12 23:07 dump.rdb
     /data # 
 
-# fine tune postgres data volume place
-    $ docker inspect 120e55a23790 | grep -A 10 Mounts
-        "Mounts": [
-            {
-                "Type": "volume",
-                "Name": "f251cc0b4fda6282507ba35a1ed7540b95e3d9d3b763dbabe397a84a87c7e01b",
-                "Source": "/var/lib/docker/volumes/f251cc0b4fda6282507ba35a1ed7540b95e3d9d3b763dbabe397a84a87c7e01b/_data",
-                "Destination": "/var/lib/postgresql/data",
-                "Driver": "local",
-                "Mode": "rw",
-                "RW": true,
-                "Propagation": ""
-            }
-    $ docker volume ls | grep f251cc0b4fda6282507ba35a1ed7540b95e3d9d3b763dbabe397a84a87c7e01b
-    local               f251cc0b4fda6282507ba35a1ed7540b95e3d9d3b763dbabe397a84a87c7e01b
+# check volumes on host
+    $ sudo ls -al `docker inspect part29_redisdata | grep Mountpoint | awk '{print $2}' | sed 's/"//g' | sed 's/,//g'`
+    total 12
+    drwxr-xr-x 2 guest-kcrwdx paavo 4096 tammi 13 01:07 .
+    drwxr-xr-x 3 root         root  4096 tammi 13 00:32 ..
+    -rw-r--r-- 1 guest-kcrwdx paavo  125 tammi 13 01:07 dump.rdb
 
-    Add volumes to docker-compose.yml
-    $ docker volume ls | grep database
-    local               part26_database
-    local               redmine_database
-
-    $ docker system prune
-    to clean some space and make sure everything gets re-built
-
-    $ docker-compose up
-    $ docker volume inspect part26_database
-    [
-        {
-            "CreatedAt": "2020-01-12T17:29:32+02:00",
-            "Driver": "local",
-            "Labels": {
-                "com.docker.compose.project": "part26",
-                "com.docker.compose.volume": "database"
-            },
-            "Mountpoint": "/var/lib/docker/volumes/part26_database/_data",
-            "Name": "part26_database",
-            "Options": null,
-            "Scope": "local"
-        }
-    ]
-    $ sudo ls -al /var/lib/docker/volumes/part26_database/_data
+    $ sudo ls -al `docker inspect part29_database | grep Mountpoint | awk '{print $2}' | sed 's/"//g' | sed 's/,//g'`
     total 132
-    drwx------ 19 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 .
-    drwxr-xr-x  3 root         root          4096 tammi 12 17:29 ..
-    drwx------  6 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 base
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:30 global
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_commit_ts
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_dynshmem
-    -rw-------  1 guest-kcrwdx guest-kcrwdx  4535 tammi 12 17:29 pg_hba.conf
-    -rw-------  1 guest-kcrwdx guest-kcrwdx  1636 tammi 12 17:29 pg_ident.conf
-    drwx------  4 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_logical
-    drwx------  4 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_multixact
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_notify
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_replslot
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_serial
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_snapshots
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_stat
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:31 pg_stat_tmp
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_subtrans
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_tblspc
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_twophase
-    -rw-------  1 guest-kcrwdx guest-kcrwdx     3 tammi 12 17:29 PG_VERSION
-    drwx------  3 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_wal
-    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_xact
-    -rw-------  1 guest-kcrwdx guest-kcrwdx    88 tammi 12 17:29 postgresql.auto.conf
-    -rw-------  1 guest-kcrwdx guest-kcrwdx 26588 tammi 12 17:29 postgresql.conf
-    -rw-------  1 guest-kcrwdx guest-kcrwdx    36 tammi 12 17:29 postmaster.opts
-    -rw-------  1 guest-kcrwdx guest-kcrwdx    94 tammi 12 17:29 postmaster.pid
-    $ docker exec -it postgres_container6 psql --dbname=defadockerdb --username=kuikka --password
+    drwx------ 19 guest-kcrwdx guest-kcrwdx  4096 tammi 13 01:02 .
+    drwxr-xr-x  3 root         root          4096 tammi 13 00:32 ..
+    drwx------  6 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 base
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 01:03 global
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_commit_ts
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_dynshmem
+    -rw-------  1 guest-kcrwdx guest-kcrwdx  4535 tammi 13 00:32 pg_hba.conf
+    -rw-------  1 guest-kcrwdx guest-kcrwdx  1636 tammi 13 00:32 pg_ident.conf
+    drwx------  4 guest-kcrwdx guest-kcrwdx  4096 tammi 13 01:17 pg_logical
+    drwx------  4 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_multixact
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 01:02 pg_notify
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_replslot
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_serial
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_snapshots
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 01:02 pg_stat
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 01:26 pg_stat_tmp
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_subtrans
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_tblspc
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_twophase
+    -rw-------  1 guest-kcrwdx guest-kcrwdx     3 tammi 13 00:32 PG_VERSION
+    drwx------  3 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_wal
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 13 00:32 pg_xact
+    -rw-------  1 guest-kcrwdx guest-kcrwdx    88 tammi 13 00:32 postgresql.auto.conf
+    -rw-------  1 guest-kcrwdx guest-kcrwdx 26588 tammi 13 00:32 postgresql.conf
+    -rw-------  1 guest-kcrwdx guest-kcrwdx    36 tammi 13 01:02 postmaster.opts
+    -rw-------  1 guest-kcrwdx guest-kcrwdx    94 tammi 13 01:02 postmaster.pid
+
+    $ docker exec -it postgres_container9 psql --dbname=defadockerdb --username=kuikka --password
     Password: 
     psql (12.1 (Debian 12.1-1.pgdg100+1))
     Type "help" for help.
@@ -217,12 +185,22 @@ Screenshot of working setup:
     (2 rows)
 
     defadockerdb=# select * from public.messages;
-    id | body |         createdAt          |         updatedAt          
-    ----+------+----------------------------+----------------------------
-    1 | hipp | 2020-01-12 15:30:16.795+00 | 2020-01-12 15:30:16.795+00
-    (1 row)
+    id |        body        |         createdAt          |         updatedAt          
+    ----+--------------------+----------------------------+----------------------------
+    1 | low watermark      | 2020-01-12 22:33:42.512+00 | 2020-01-12 22:33:42.512+00
+    2 | some stuff         | 2020-01-12 22:33:53.836+00 | 2020-01-12 22:33:53.836+00
+    3 | some stuff 2       | 2020-01-12 22:40:13.527+00 | 2020-01-12 22:40:13.527+00
+    4 | freaking redis     | 2020-01-12 22:46:15.547+00 | 2020-01-12 22:46:15.547+00
+    5 | freaking redis2    | 2020-01-12 22:50:01.752+00 | 2020-01-12 22:50:01.752+00
+    6 | freaking redis23   | 2020-01-12 22:50:05.275+00 | 2020-01-12 22:50:05.275+00
+    7 | freaking redis234  | 2020-01-12 22:50:08.044+00 | 2020-01-12 22:50:08.044+00
+    8 | freaking redis2345 | 2020-01-12 22:50:10.255+00 | 2020-01-12 22:50:10.255+00
+    9 | Empty message      | 2020-01-12 22:55:51.478+00 | 2020-01-12 22:55:51.478+00
+    10 | duuu               | 2020-01-12 22:55:56.348+00 | 2020-01-12 22:55:56.348+00
+    11 | duuusd             | 2020-01-12 23:16:03.297+00 | 2020-01-12 23:16:03.297+00
+    12 | duuusdd            | 2020-01-12 23:16:10.096+00 | 2020-01-12 23:16:10.096+00
+    (12 rows)
 
-    defadockerdb=# quit
-
+    defadockerdb=# 
 ![see screenshotfile](./psql-vs-adminer.png?raw=true "./../psql-vs-adminer.png")
             
