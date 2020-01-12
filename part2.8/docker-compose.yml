@@ -1,0 +1,101 @@
+version: '3.5' 
+
+services: 
+    db:
+      image: postgres
+      hostname: db
+      restart: always
+      networks:
+        - redis
+      environment:
+        POSTGRES_USER: kuikka
+        POSTGRES_PASSWORD: koponen
+        POSTGRES_DB: defadockerdb
+      volumes:
+        - database:/var/lib/postgresql/data
+      container_name: postgres_container8  
+    adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8080:8080
+      networks:
+        - redis
+      container_name: adminer_container8
+    redis:
+      image: "redis:alpine"
+      hostname: redis
+      expose:
+        - 6379
+      networks:
+        - redis
+      container_name: redis_container8
+    backend:
+      image: vaapo/backend-example-docker
+      hostname: backend
+      build:
+        context: ./backend-example-docker
+        dockerfile: Dockerfile
+      environment: 
+        - REDIS=redis
+        - REDIS_PORT=6379
+        - DB_USERNAME=kuikka
+        - DB_PASSWORD=koponen
+        - DB_NAME=defadockerdb
+        # defaults to DB_USERNAME if not set.
+        - DB_HOST=db 
+        #<hostname>` defaults to "localhost" if not set.
+    #    - VIRTUAL_HOST=backend.colasloth.com
+ #     ports: 
+ #       - 8000:8000
+      expose:
+        - 8000
+      depends_on:
+        - redis
+        - db
+      networks:
+        - redis
+        - proxybacknw
+      container_name: backend-example-docker8
+    frontend:
+      image: vaapo/frontend-example-docker  
+      build:
+        context: ./frontend-example-docker
+        dockerfile: Dockerfile
+      environment:
+        - API_URL=http://backend.colasloth.com:8000
+    #    - VIRTUAL_HOST=frontend.colasloth.com
+      expose: 
+        - 5000
+#        ports: 
+#        - 5000:5000
+      depends_on: 
+        - backend
+      networks:
+        - proxyfrontnw
+        - proxybacknw
+      container_name: frontend-example-docker8
+    proxy: 
+#      image: jwilder/nginx-proxy 
+      image: nginx
+      volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf:ro
+        - /var/run/docker.sock:/tmp/docker.sock:ro 
+      ports:
+        - 80:80
+      depends_on:
+        - backend
+        - frontend
+      networks:
+        - proxyfrontnw
+        - proxybacknw
+networks:
+  redis:
+    driver: bridge
+  proxyfrontnw:
+    driver: bridge
+  proxybacknw:
+    driver: bridge
+
+volumes:
+  database:

@@ -258,3 +258,8 @@ See part2.5-directory. Screenshot of working setup:
 ## [x] 2.7 Configure a machine learning project.
 
 ![see screenshotfile](./part2.7/machine_learning-2.7.png?raw=true "./../machine_learning-2.7.png")
+
+## [x] 2.8 Add nginx to example frontend + backend.
+    based on 2.6
+
+![see screenshotfile](./part2.8/nginx-proxy-2.8.png?raw=true "./nginx-proxy-2.8.png")
