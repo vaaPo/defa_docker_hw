@@ -11,6 +11,8 @@ services:
         POSTGRES_USER: kuikka
         POSTGRES_PASSWORD: koponen
         POSTGRES_DB: defadockerdb
+      volumes:
+        - database:/var/lib/postgresql/data  
     adminer:
       image: adminer
       restart: always
@@ -64,3 +66,6 @@ services:
 networks:
   redis:
     driver: bridge
+
+volumes:
+  database:
