@@ -12,7 +12,8 @@ services:
         POSTGRES_PASSWORD: koponen
         POSTGRES_DB: defadockerdb
       volumes:
-        - database:/var/lib/postgresql/data  
+        - database:/var/lib/postgresql/data
+      container_name: postgres_container6  
     adminer:
       image: adminer
       restart: always
@@ -20,6 +21,7 @@ services:
         - 8080:8080
       networks:
         - redis
+      container_name: adminer_container6
     redis:
       image: "redis:alpine"
       hostname: redis

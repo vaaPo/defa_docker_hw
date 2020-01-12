@@ -57,4 +57,73 @@ Screenshot of working setup:
     local               part26_database
     local               redmine_database
 
+    $ docker system prune
+    to clean some space and make sure everything gets re-built
+
+    $ docker-compose up
+    $ docker volume inspect part26_database
+    [
+        {
+            "CreatedAt": "2020-01-12T17:29:32+02:00",
+            "Driver": "local",
+            "Labels": {
+                "com.docker.compose.project": "part26",
+                "com.docker.compose.volume": "database"
+            },
+            "Mountpoint": "/var/lib/docker/volumes/part26_database/_data",
+            "Name": "part26_database",
+            "Options": null,
+            "Scope": "local"
+        }
+    ]
+    $ sudo ls -al /var/lib/docker/volumes/part26_database/_data
+    total 132
+    drwx------ 19 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 .
+    drwxr-xr-x  3 root         root          4096 tammi 12 17:29 ..
+    drwx------  6 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 base
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:30 global
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_commit_ts
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_dynshmem
+    -rw-------  1 guest-kcrwdx guest-kcrwdx  4535 tammi 12 17:29 pg_hba.conf
+    -rw-------  1 guest-kcrwdx guest-kcrwdx  1636 tammi 12 17:29 pg_ident.conf
+    drwx------  4 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_logical
+    drwx------  4 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_multixact
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_notify
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_replslot
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_serial
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_snapshots
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_stat
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:31 pg_stat_tmp
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_subtrans
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_tblspc
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_twophase
+    -rw-------  1 guest-kcrwdx guest-kcrwdx     3 tammi 12 17:29 PG_VERSION
+    drwx------  3 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_wal
+    drwx------  2 guest-kcrwdx guest-kcrwdx  4096 tammi 12 17:29 pg_xact
+    -rw-------  1 guest-kcrwdx guest-kcrwdx    88 tammi 12 17:29 postgresql.auto.conf
+    -rw-------  1 guest-kcrwdx guest-kcrwdx 26588 tammi 12 17:29 postgresql.conf
+    -rw-------  1 guest-kcrwdx guest-kcrwdx    36 tammi 12 17:29 postmaster.opts
+    -rw-------  1 guest-kcrwdx guest-kcrwdx    94 tammi 12 17:29 postmaster.pid
+    $ docker exec -it postgres_container6 psql --dbname=defadockerdb --username=kuikka --password
+    Password: 
+    psql (12.1 (Debian 12.1-1.pgdg100+1))
+    Type "help" for help.
+
+    defadockerdb=# \d
+                List of relations
+    Schema |      Name       |   Type   | Owner  
+    --------+-----------------+----------+--------
+    public | messages        | table    | kuikka
+    public | messages_id_seq | sequence | kuikka
+    (2 rows)
+
+    defadockerdb=# select * from public.messages;
+    id | body |         createdAt          |         updatedAt          
+    ----+------+----------------------------+----------------------------
+    1 | hipp | 2020-01-12 15:30:16.795+00 | 2020-01-12 15:30:16.795+00
+    (1 row)
+
+    defadockerdb=# quit
+
+     ![see screenshotfile](./psql-vs-adminer.png?raw=true "./../psql-vs-adminer.png")
             
