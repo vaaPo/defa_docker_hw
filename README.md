@@ -301,3 +301,9 @@ See part2.5-directory. Screenshot of working setup:
     -rw-------  1 guest-kcrwdx guest-kcrwdx    36 tammi 13 01:02 postmaster.opts
     -rw-------  1 guest-kcrwdx guest-kcrwdx    94 tammi 13 01:02 postmaster.pid
 
+### configured the redis.conf also
+
+![see screenshotfile](./part2.9/psql-vs-adminer.png?raw=true "./../psql-vs-adminer.png")
+![see screenshotfile](./part2.9/redis-cli-MONITOR.png?raw=true "./../redis-cli-MONITOR.png")
+![see screenshotfile](./part2.9/redis-cli_add_keys.png?raw=tru "./../redis-cli_add_keys.png")
+            
