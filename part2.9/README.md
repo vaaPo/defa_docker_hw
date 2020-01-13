@@ -202,5 +202,19 @@ Screenshot of working setup:
     (12 rows)
 
     defadockerdb=# 
+    $ redis-cli monitor
+    OK
+    1578932773.075056 [0 172.25.0.1:59632] "get" "slow"
+    1578932777.417120 [0 172.25.0.1:59632] "get" "slow"
+    1578932779.041981 [0 172.25.0.1:59632] "get" "slow"
+
+## Telegram discussion with Joni - about redis AOF
+
+    decided to put /data/redis.conf and a line https://redis.io/topics/persistence
+    appendonly yes
+
+
 ![see screenshotfile](./psql-vs-adminer.png?raw=true "./../psql-vs-adminer.png")
+![see screenshotfile](./redis-cli-MONITOR.png?raw=true "./../redis-cli-MONITOR.png")
+![see screenshotfile](./redis-cli_add_keys.png?raw=tru "./../redis-cli_add_keys.png")
             
