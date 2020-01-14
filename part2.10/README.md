@@ -39,6 +39,13 @@ Screenshot of working setup:
 # Check adminer with browser http://localhost:8080/
 ![see screenshotfile](./adminer-defadockerdb-210.png?raw=true "./../adminer-defadockerdb-210.png")
 
+# exec sh in services
+
+## backend exec sh
+![screen](backend-exec-210.png)
+
+## nginx proxy exec
+![see screenshotfile](./nginx-proxy-exec-210.png)
 
 # check volumes
     $ docker volume ls
