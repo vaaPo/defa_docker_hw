@@ -39,12 +39,12 @@ services:
       container_name: redis_container10
     backend:
       image: vaapo/backend-example-docker
-      hostname: backend
+#      hostname: backend.colasloth.com
       build:
         context: ./backend-example-docker
         dockerfile: Dockerfile
       environment: 
-        - FRONT_URL=front_url.colasloth.com
+        - FRONT_URL=http://frontend:5000
         - REDIS=redis
         - REDIS_PORT=6379
         - DB_USERNAME=kuikka
@@ -63,14 +63,20 @@ services:
       networks:
         - redis
         - proxybacknw
+        - proxyfrontnw
       container_name: backend-example-docker10
     frontend:
       image: vaapo/frontend-example-docker  
+#      hostname: frontend.colasloth.com
       build:
         context: ./frontend-example-docker
         dockerfile: Dockerfile
       environment:
-        - API_URL=http://localhost:8000
+ #       - API_URL=http://proxy.colasloth.com:8000
+ #       - API_URL=http://localhost:8000
+         - API_URL=http://localhost:80/api
+  #      - API_URL=http://backend:8000
+  #      - API_URL=/
       expose:
         - 5000
 #      ports: 
@@ -82,10 +88,15 @@ services:
         - proxybacknw
       container_name: frontend-example-docker10
     proxy: 
-      image: nginx
+      image: vaapo/nginx10
+      build: 
+        context: ./proxy
+        dockerfile: Dockerfile
+      #hostname: proxy
       volumes:
         - ./nginx.conf:/etc/nginx/nginx.conf:ro
         - /var/run/docker.sock:/tmp/docker.sock:ro 
+        - nginxlog:/var/log/nginx
       ports:
         - 80:80
       depends_on:
@@ -94,6 +105,7 @@ services:
       networks:
         - proxyfrontnw
         - proxybacknw
+      container_name: vaapo_proxy_nginx10 
 networks:
   redis:
     driver: bridge
@@ -104,3 +116,4 @@ networks:
 volumes:
   database:
   redisdata:
+  nginxlog:
