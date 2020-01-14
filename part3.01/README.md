@@ -12,4 +12,6 @@
         redis_container10           redis                           alpine   8af6a13284bf   31.5 MB
         vaapo_proxy_nginx10         vaapo/nginx10                   latest   bfeada42e62f   52.6 MB
     
-    
+### first iteration on backend
+    $ docker image ls | grep 301
+    back301test                             latest              455e76c8e368        45 seconds ago      529MB
