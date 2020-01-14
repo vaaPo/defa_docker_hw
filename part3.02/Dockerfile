@@ -1,7 +1,7 @@
 FROM alpine:3.9
 LABEL maintainer="Timo Taskinen <timo.taskinen@iki.fi>"
 # from https://hub.docker.com/r/taskinen/yle-dl/dockerfile
-# optimization by Paavo Muranen
+# optimization by Paavo Muranen 
 
 RUN apk add --no-cache \
     bash \
