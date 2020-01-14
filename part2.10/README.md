@@ -47,6 +47,9 @@ Screenshot of working setup:
 ## nginx proxy exec
 ![see screenshotfile](./nginx-proxy-exec-210.png)
 
+## containers etc.
+![shot](./docker-compose-containers-networks-volumes-210.png)
+
 # check volumes
     $ docker volume ls
     DRIVER              VOLUME NAME
