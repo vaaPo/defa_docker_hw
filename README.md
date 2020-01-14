@@ -306,4 +306,8 @@ See part2.5-directory. Screenshot of working setup:
 ![see screenshotfile](./part2.9/psql-vs-adminer.png?raw=true "./../psql-vs-adminer.png")
 ![see screenshotfile](./part2.9/redis-cli-MONITOR.png?raw=true "./../redis-cli-MONITOR.png")
 ![see screenshotfile](./part2.9/redis-cli_add_keys.png?raw=tru "./../redis-cli_add_keys.png")
-            
+
+## [x] 2.10 Make sure that every button for exercises works.
+
+Screenshot of working setup:
+![see screenshotfile](./part2.10/green-buttons_2.10.png?raw=true "./green-buttons_2.10.png")
