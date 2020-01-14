@@ -44,7 +44,7 @@ services:
         context: ./backend-example-docker
         dockerfile: Dockerfile
       environment: 
-        - FRONT_URL=http://frontend:5000
+#        - FRONT_URL=http://frontend:5000
         - REDIS=redis
         - REDIS_PORT=6379
         - DB_USERNAME=kuikka
@@ -73,8 +73,8 @@ services:
         dockerfile: Dockerfile
       environment:
  #       - API_URL=http://proxy.colasloth.com:8000
- #       - API_URL=http://localhost:8000
-         - API_URL=http://localhost:80/api
+        - API_URL=http://localhost:8000
+ #        - API_URL=http://localhost:80/api
   #      - API_URL=http://backend:8000
   #      - API_URL=/
       expose:
