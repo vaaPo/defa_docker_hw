@@ -18,4 +18,8 @@
 ### second iteration on backend
     $ docker image ls | grep 301
     back301test                             latest              b913b1f295fc        7 seconds ago       477MB
+
+### first iteration on frontend
+    $ docker image ls | grep front301
+    front301test                            latest              d3fbb81e7f83        57 seconds ago      573MB
     
