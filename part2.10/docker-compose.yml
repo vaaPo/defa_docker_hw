@@ -71,9 +71,10 @@ services:
       build:
         context: ./frontend-example-docker
         dockerfile: Dockerfile
-      environment:
+ #     environment:
  #       - API_URL=http://proxy.colasloth.com:8000
-        - API_URL=http://localhost:8000
+#        - API_URL=http://localhost:8000
+#        - API_URL=http://localhost:8000/api
  #        - API_URL=http://localhost:80/api
   #      - API_URL=http://backend:8000
   #      - API_URL=/
