@@ -29,7 +29,7 @@ RUN apk add --no-cache \
     pip install -U pip setuptools youtube_dl yle-dl && \
     apk del gcc make py-pip
 
-# docker run  -v "$(pwd)":/out yledl302testopt2 https://areena.yle.fi/1-50072429
+# Sdocker run  -v "$(pwd)":/out yledl302testopt2 https://areena.yle.fi/1-50072429
 # 
 
 WORKDIR /out
