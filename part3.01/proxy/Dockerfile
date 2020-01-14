@@ -2,20 +2,20 @@
 FROM nginx:alpine
 LABEL maintainer="Docker student Paavo Muranen <paavo@muranen.fi>"
 
-RUN apk add --update --no-cache \
-    findutils \
-    sudo \
-    wget \
-    curl \
-    gawk \
-    sed \
-    grep \
-    coreutils \
-    net-tools \
-    bind-tools \
-    diffutils \
-    iproute2 \
-    gzip \
-    tcpdump \
-    openssh \
-    util-linux;
+#RUN apk add --update --no-cache \
+#    findutils \
+#    sudo \
+#    wget \
+#    curl \
+#    gawk \
+#    sed \
+#    grep \
+#    coreutils \
+#    net-tools \
+#    bind-tools \
+#    diffutils \
+#    iproute2 \
+#    gzip \
+#    tcpdump \
+#    openssh \
+#    util-linux;

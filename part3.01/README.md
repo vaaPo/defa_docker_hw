@@ -22,4 +22,6 @@
 ### first iteration on frontend
     $ docker image ls | grep front301
     front301test                            latest              d3fbb81e7f83        57 seconds ago      573MB
-    
+### first iteration on proxy
+    $ docker image ls | grep proxy301
+    proxy301test                            latest              e1e899c8c890        6 hours ago         21.5MB
