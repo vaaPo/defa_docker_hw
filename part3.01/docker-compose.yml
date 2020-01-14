@@ -1,0 +1,100 @@
+version: '3.5' 
+
+services: 
+    db:
+      image: postgres
+      hostname: db
+      restart: unless-stopped
+      networks:
+        - redis
+      environment:
+        POSTGRES_USER: kuikka
+        POSTGRES_PASSWORD: koponen
+        POSTGRES_DB: defadockerdb
+      volumes:
+        - database:/var/lib/postgresql/data
+      container_name: postgres_container301
+    adminer:
+      image: adminer
+      restart: unless-stopped
+      ports:
+        - 8080:8080
+      networks:
+        - redis
+      container_name: adminer_container301
+    redis:
+      image: "redis:alpine"
+      hostname: redis
+      ports:
+        - 6379:6379
+      networks:
+        - redis     
+      command: redis-server /usr/local/etc/redis/redis.conf
+      volumes:
+        - redisdata:/data
+        - /home/paavo/defa/defa_docker_hw/part2.10/redis.conf:/usr/local/etc/redis/redis.conf
+      container_name: redis_container301
+    backend:
+      image: vaapo/backend-example-docker301
+      build:
+        context: ./backend-example-docker
+        dockerfile: Dockerfile
+      environment: 
+        - REDIS=redis
+        - REDIS_PORT=6379
+        - DB_USERNAME=kuikka
+        - DB_PASSWORD=koponen
+        - DB_NAME=defadockerdb
+        - DB_HOST=db 
+      expose: 
+        - 8000
+      depends_on:
+        - redis
+        - db
+      networks:
+        - redis
+        - proxybacknw
+        - proxyfrontnw
+      container_name: backend-example-docker301
+    frontend:
+      image: vaapo/frontend-example-docker  
+      build:
+        context: ./frontend-example-docker
+        dockerfile: Dockerfile
+      expose:
+        - 5000
+      depends_on: 
+        - backend
+      networks:
+        - proxyfrontnw
+        - proxybacknw
+      container_name: frontend-example-docker301
+    proxy: 
+      image: vaapo/nginx301
+      build: 
+        context: ./proxy
+        dockerfile: Dockerfile
+      volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf:ro
+        - /var/run/docker.sock:/tmp/docker.sock:ro 
+        - nginxlog:/var/log/nginx
+      ports:
+        - 80:80
+      depends_on:
+        - backend
+        - frontend
+      networks:
+        - proxyfrontnw
+        - proxybacknw
+      container_name: vaapo_proxy_nginx301 
+networks:
+  redis:
+    driver: bridge
+  proxyfrontnw:
+    driver: bridge
+  proxybacknw:
+    driver: bridge
+volumes:
+  database:
+  redisdata:
+  nginxlog:
