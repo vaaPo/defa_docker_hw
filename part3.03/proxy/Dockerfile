@@ -21,4 +21,7 @@ RUN apk add --update --no-cache \
     util-linux;
 ## add mortal user
 RUN useradd -m app
-USER map
+RUN groupadd app
+RUN usermod -a app app
+USER app
+

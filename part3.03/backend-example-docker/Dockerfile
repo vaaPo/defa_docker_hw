@@ -11,8 +11,12 @@ RUN node -v && npm -v
 
 ## add mortal user
 RUN useradd -m app
-USER app
+RUN groupadd app
+RUN usermod -a app app
 
+RUN chown -R app:app /usr/src/app
+
+USER app
 WORKDIR /usr/src/app
 
 # Install app dependencies

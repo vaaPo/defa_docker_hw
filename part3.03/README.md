@@ -11,6 +11,9 @@ https://hub.docker.com/_/postgres/
 
 # FILES
 
+In containers, the USER app should own the directories. Otherwise this sort of errors occurs:
+    npm WARN checkPermissions Missing write access to /usr/src/app
+
 ```code
 ```
 
