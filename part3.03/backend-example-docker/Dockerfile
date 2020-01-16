@@ -11,10 +11,10 @@ RUN node -v && npm -v
 
 ## add mortal user
 RUN useradd -m app
-RUN groupadd app
+RUN groupadd dockerapp
 RUN usermod -a app app
 
-RUN chown -R app:app /usr/src/app
+RUN chown -R app:dockerapp /usr/src/app
 
 USER app
 WORKDIR /usr/src/app

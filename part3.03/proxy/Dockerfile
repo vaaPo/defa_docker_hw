@@ -21,7 +21,7 @@ RUN apk add --update --no-cache \
     util-linux;
 ## add mortal user
 RUN useradd -m app
-RUN groupadd app
-RUN usermod -a app app
+RUN groupadd dockerapp
+RUN usermod -a dockerapp app
 USER app
 
