@@ -374,6 +374,8 @@ Screenshot of working setup:
 
 ## 3.04 [x] Switch to node docker packages and document before and after sizes of frontend and backend
 
-
+### BEFORE
+![shot](./part3.04/BEFORE_from_images.png)
+![shot](./part3.04/before-ubuntu-based-304.png)
 
 

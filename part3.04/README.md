@@ -25,6 +25,7 @@ configured for proxy, frontend, backend:
     Non-rootl group: dockerapp
 
 ## screenshots
+![shot](./BEFORE_from_images.png)
 ![shot](./before-ubuntu-based-304.png)
 
 
