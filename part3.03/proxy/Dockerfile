@@ -22,6 +22,6 @@ RUN apk add --update --no-cache \
 ## add mortal user
 RUN useradd -m app
 RUN groupadd dockerapp
-RUN usermod -a dockerapp app
+RUN usermod -G dockerapp app
 USER app
 
