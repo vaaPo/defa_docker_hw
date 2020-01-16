@@ -445,3 +445,7 @@ view to frontend service in shell, see dist and node_modules only.
 ![shot](./part3.05/green-buttons-305.png)
 ![shot](./part3.05/frontend-starts-onerow.png)
 ![shot](./part3.05/frontend-service-shell-view-dist-305.png)
+
+## [x] 3.06 Do all or most of the optimizations from security to size.
+    TODO fix backend
+    
