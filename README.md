@@ -356,3 +356,11 @@ Screenshot of working setup:
     part3.02$ docker image ls
     REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
     yledl302testopt2                        latest              cc549a1af74a        2 minutes ago       205MB
+
+## 3.03 [x] Make sure the containers start their processes as a non-root user.
+    
+    Based on 2.10 setup move to app-user from root. I am using this to be able to exec to shell and see.
+    Otherwise could do it based on 3.01.
+
+
+
