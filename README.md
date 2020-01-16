@@ -374,8 +374,15 @@ Screenshot of working setup:
 
 ## 3.04 [x] Switch to node docker packages and document before and after sizes of frontend and backend
 
-### BEFORE
+### BEFORE *docker304 and AFTER *304i
+    $ docker image ls | grep 304 | grep end
+    backend304i                             latest              d544faa4d961        24 minutes ago      115MB
+    frontend304i                            latest              20949ebde2bf        40 minutes ago      213MB
+    vaapo/frontend-example-docker304        latest              5a7d74c4b158        8 hours ago         662MB
+    vaapo/backend-example-docker304         latest              de71eb6f8b5b        8 hours ago         661MB
 ![shot](./part3.04/BEFORE_from_images.png)
 ![shot](./part3.04/before-ubuntu-based-304.png)
+![shot](./part3.04/FROM-images-iterations.png)
+![shot](./part3.04/AFTER-front213-back115.png)
 
 

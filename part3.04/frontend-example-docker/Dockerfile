@@ -1,8 +1,10 @@
 # Filename: Dockerfile
 #FROM ubuntu:latest
-FROM node:alpine
+#272MB FROM node:alpine
+FROM alpine:latest
 LABEL maintainer="Docker student Paavo Muranen <paavo@muranen.fi>"
-RUN apk add --update --no-cache shadow;
+#RUN apk add --update --no-cache shadow;
+RUN apk add --update --no-cache shadow npm;
 RUN useradd -m app
 RUN groupadd dockerapp 
 RUN usermod -G dockerapp app
@@ -37,10 +39,10 @@ COPY --chown=app:dockerapp ./package*json ./
 
 USER app
 
-RUN npm install
+# RUN npm install
 
 # If you are building your code for production
-# RUN npm ci --only=production
+RUN npm ci --only=production
 
 # Bundle app source
 COPY . .

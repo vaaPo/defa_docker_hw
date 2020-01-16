@@ -1,9 +1,16 @@
 # Filename: Dockerfile
-#FROM ubuntu:latest
-FROM node:alpine
+## 660MB FROM ubuntu:latest
+## 270MB FROM node:alpine
+## 1.09GB FROM node:latest  
+## 319MB FROM node:slim
+## 212MB FROM alpine:latest
+FROM alpine:latest
+#FROM node:alpine
 LABEL maintainer="Docker student Paavo Muranen <paavo@muranen.fi>"
-RUN apk add --update --no-cache shadow;
 
+RUN apk add --update --no-cache shadow npm;
+
+#RUN apk add --no-cache shadow;
 #RUN apk add --update --no-cache \
 #    findutils \
 #    shadow \
@@ -61,20 +68,25 @@ RUN chown -R app:dockerapp /usr/src/app && \
 COPY --chown=app:dockerapp ./package*json ./
 
 RUN npm install
+
 # If you are building your code for production
 # RUN npm ci --only=production
 
+
 # Bundle app source
-COPY . .
+COPY --chown=app:dockerapp . .
+#RUN chown app:dockerapp logs.txt
+USER app
+
 EXPOSE 8000
 #ENV FRONT_URL=http://localhost:5000
 #ENV FRONT_URL=http://frontend:5000
 #VOLUME /logs
 
-RUN chown -R app:dockerapp .
-RUN chown -R app:dockerapp ./*
-
-USER app
+## strangely these eat both 48.1MB 
+##RUN chown -R app:dockerapp .
+##RUN chown -R app:dockerapp ./*
+##USER app
 
 
 CMD npm start
