@@ -11,7 +11,7 @@ RUN node -v && npm -v
 
 ## add mortal user
 RUN useradd -m app
-USER map
+USER app
 
 WORKDIR /usr/src/app
 
