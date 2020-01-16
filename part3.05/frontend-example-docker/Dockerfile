@@ -1,9 +1,9 @@
 # Filename: Dockerfile
-#FROM ubuntu:latest
-#272MB FROM node:alpine
-FROM alpine:latest
+
+#
+# --- BASE NODE ---
+FROM alpine:latest  AS base
 LABEL maintainer="Docker student Paavo Muranen <paavo@muranen.fi>"
-#RUN apk add --update --no-cache shadow;
 RUN apk add --update --no-cache shadow npm;
 RUN useradd -m app
 RUN groupadd dockerapp 
@@ -13,56 +13,47 @@ WORKDIR /usr/src/app
 RUN chown -R app:dockerapp /usr/src/app && \
     chmod -R ug+rxw /usr/src/app
 
-#RUN apt-get update
-#RUN apt-get install -y build-essential apt-transport-https lsb-release ca-certificates curl sudo traceroute net-tools dnsutils inetutils-ping
-
-# Using Ubuntu
-#RUN sudo curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-#RUN sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-#RUN sudo apt-get install -y nodejs
-#RUN node -v && npm -v
-
-## add mortal user
-#RUN useradd -m app
-#RUN groupadd dockerapp
-#RUN usermod -G dockerapp app
-
-#WORKDIR /usr/src/app
-#RUN chown -R app:dockerapp /usr/src/app
-#RUN chmod u+rxw /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-
 COPY --chown=app:dockerapp ./package*json ./
 
+RUN npm install -g serve
+RUN ls -al
+#
+# --------- DEPENDENCIES ----------
+FROM base AS dependencies
 USER app
-
-# RUN npm install
-
+#RUN npm install
 # If you are building your code for production
 RUN npm ci --only=production
+COPY --chown=app:dockerapp . .
+RUN ls -al
+RUN npm run build
+RUN ls -al
+RUN cp -R node_modules prod_node_modules
+RUN cp -R dist prod_dist
+# dev stuff
+#RUN npm install 
+# builds to dist
+#WORKDIR /usr/src/app
+#RUN npm run build
 
+#
+# ----- TEST ------------
+FROM dependencies AS test
+USER app
+RUN node -v && npm -v
+#RUN  npm run lint && npm run setup && npm run test
+
+#
+# ----- RELEASE -----------
+FROM base AS release 
+#COPY --from=dependencies /usr/src/app ./dist 
 # Bundle app source
-COPY . .
+USER app
+#COPY --from=dependencies . .
+#WORKDIR /usr/src/app
+COPY --from=dependencies --chown=app:dockerapp /usr/src/app/prod_dist ./dist
+COPY --from=dependencies --chown=app:dockerapp /usr/src/app/prod_node_modules ./node_modules
 EXPOSE 5000
-
-#RUN chown -R app:dockerapp .
-#RUN chown -R app:dockerapp .*
-#RUN chown -R app:dockerapp ./*
-#USER app
-
-# cors
 #ENV API_URL=http://localhost:8000
-CMD npm start
-#ENV API_URL=http://backend:8000
-#CMD API_URL=http://backend:8000 npm start
-#ENV API_URL=http://localhost:8000
-#CMD API_URL=http://localhost:8000 npm start
-
-
-## Exercise 1.10 -> to run the project
-
-# docker build -t vaapo/frontend-example-docker .
-# docker run -p5000:5000 vaapo/frontend-example-docker
+#CMD npm start
+CMD serve -s -l 5000 dist

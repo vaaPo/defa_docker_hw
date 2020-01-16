@@ -400,5 +400,48 @@ So perhaps I could have done it also with the ready-images and reached the simil
 
 ## [x] 3.05 Do a multi-stage build for the frontend project since we’ve come so far with the application.
 
-dist directory contents for working frontend:
+view to frontend service in shell, see dist and node_modules only.
 
+
+    $ docker container ps | grep frontend
+    9868150797c3        frontend305i        "/bin/sh -c 'serve -…"   3 minutes ago       Up 3 minutes        5000/tcp                       frontend305c
+    paavo@silber:~/defa/defa_docker_hw/part3.04$ docker exec -it 9868150797c3 /bin/sh
+    /usr/src/app $ ls -la
+    total 392
+    drwxrwxr-x    1 app      dockerap      4096 Jan 16 21:26 .
+    drwxr-xr-x    1 root     root          4096 Jan 16 18:33 ..
+    drwxr-xr-x    2 app      dockerap      4096 Jan 16 21:26 dist
+    drwxr-xr-x  659 app      dockerap     24576 Jan 16 21:26 node_modules
+    -rw-r--r--    1 app      dockerap    354385 Jan 16 15:27 package-lock.json
+    -rw-r--r--    1 app      dockerap      1693 Jan 16 15:27 package.json
+    /usr/src/app $ ls -al dist
+    total 2704
+    drwxr-xr-x    2 app      dockerap      4096 Jan 16 21:26 .
+    drwxrwxr-x    1 app      dockerap      4096 Jan 16 21:26 ..
+    -rw-r--r--    1 app      dockerap     40148 Jan 16 21:26 0ab54153eeeca0ce03978cc463b257f7.woff2
+    -rw-r--r--    1 app      dockerap     98640 Jan 16 21:26 13db00b7a34fee4d819ab7f9838cc428.eot
+    -rw-r--r--    1 app      dockerap     31156 Jan 16 21:26 701ae6abd4719e9c2ada3535a497b341.eot
+    -rw-r--r--    1 app      dockerap    107201 Jan 16 21:26 82f60bd0b94a1ed68b1e6e309ce2e8c3.svg
+    -rw-r--r--    1 app      dockerap    106004 Jan 16 21:26 8e3c7f5520f5ae906c6cf6d7f3ddcd19.eot
+    -rw-r--r--    1 app      dockerap    390837 Jan 16 21:26 962a1bf31c081691065fe333d9fa8105.svg
+    -rw-r--r--    1 app      dockerap     28123 Jan 16 21:26 9c74e172f87984c48ddf5c8108cabe67.png
+    -rw-r--r--    1 app      dockerap     63728 Jan 16 21:26 a046592bac8f2fd96e994733faf3858c.woff
+    -rw-r--r--    1 app      dockerap    507628 Jan 16 21:26 a1a749e89f578a49306ec2b055c073da.svg
+    -rw-r--r--    1 app      dockerap      3269 Jan 16 21:26 a3e2211dddcba197b5bbf2aa9d5d9a9a.svg
+    -rw-r--r--    1 app      dockerap     30928 Jan 16 21:26 ad97afd3337e8cda302d10ff5a4026b8.ttf
+    -rw-r--r--    1 app      dockerap    105784 Jan 16 21:26 b87b9ba532ace76ae9f6edfe9f72ded2.ttf
+    -rw-r--r--    1 app      dockerap      3273 Jan 16 21:26 bff6c47a9da5c7cfa2e8a552e2df3a78.svg
+    -rw-r--r--    1 app      dockerap     98404 Jan 16 21:26 c5ebe0b32dc1b5cc449a76c4204d13bb.ttf
+    -rw-r--r--    1 app      dockerap     12240 Jan 16 21:26 cd6c777f1945164224dee082abaea03a.woff2
+    -rw-r--r--    1 app      dockerap     54488 Jan 16 21:26 e8c322de9658cbeb8a774b6624167c2c.woff2
+    -rw-r--r--    1 app      dockerap     14712 Jan 16 21:26 ef60a4f6c25ef7f39f2d25a748dbecfe.woff
+    -rw-r--r--    1 app      dockerap     50524 Jan 16 21:26 faff92145777a3cbaf8e7367b4807987.woff
+    -rw-r--r--    1 app      dockerap       454 Jan 16 21:26 index.html
+    -rw-r--r--    1 app      dockerap       127 Jan 16 21:26 main.css
+    -rw-r--r--    1 app      dockerap     19602 Jan 16 21:26 main.js
+    -rw-r--r--    1 app      dockerap    616952 Jan 16 21:26 vendors~main-1.css
+    -rw-r--r--    1 app      dockerap    335561 Jan 16 21:26 vendors~main.js
+
+![shot](./part3.5/green-buttons-305.png)
+![shot](./part3.5/frontend-starts-onerow.png)
+![shot](./part3.5/frontend-service-shell-view-dist-305.png)
