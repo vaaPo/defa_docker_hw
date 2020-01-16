@@ -372,5 +372,8 @@ Screenshot of working setup:
 ![shot](./part3.03/non-root-backend.png)
 ### nginx log files omitted due stdout + postgres and redis
 
+## 3.04 [x] Switch to node docker packages and document before and after sizes of frontend and backend
+
+
 
 
