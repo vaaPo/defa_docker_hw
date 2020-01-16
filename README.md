@@ -398,4 +398,7 @@ So perhaps I could have done it also with the ready-images and reached the simil
     42adfeed0872        7 minutes ago       /bin/sh -c chown -R app:dockerapp .             48.1MB              
     f4d459f4677b        8 minutes ago       /bin/sh -c #(nop)  EXPOSE 8000                  0B       
 
+## [x] 3.05 Do a multi-stage build for the frontend project since we’ve come so far with the application.
+
+dist directory contents for working frontend:
 

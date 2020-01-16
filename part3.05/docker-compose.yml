@@ -1,0 +1,122 @@
+version: '3.5' 
+# for 3.05
+services: 
+    db:
+      image: postgres
+      hostname: db
+      restart: unless-stopped
+      networks:
+        - redis
+      environment:
+        POSTGRES_USER: kuikka
+        POSTGRES_PASSWORD: koponen
+        POSTGRES_DB: defadockerdb
+      volumes:
+        - database:/var/lib/postgresql/data
+      container_name: postgres305c
+    adminer:
+      image: adminer
+      restart: unless-stopped
+      ports:
+        - 8080:8080
+      networks:
+        - redis
+      container_name: adminer305c
+    redis:
+      image: "redis:alpine"
+      hostname: redis
+#      restart: unless-stopped
+#      expose:
+#        - 6379
+      ports:
+        - 6379:6379
+      networks:
+        - redis     
+      command: redis-server /usr/local/etc/redis/redis.conf
+      volumes:
+        - redisdata:/data
+        - /home/paavo/defa/defa_docker_hw/part2.10/redis.conf:/usr/local/etc/redis/redis.conf
+      container_name: redis305c
+    backend:
+      image: backend305i
+#      hostname: backend.colasloth.com
+      build:
+        context: ./backend-example-docker
+        dockerfile: Dockerfile
+      environment: 
+#        - FRONT_URL=http://frontend:5000
+        - REDIS=redis
+        - REDIS_PORT=6379
+        - DB_USERNAME=kuikka
+        - DB_PASSWORD=koponen
+        - DB_NAME=defadockerdb
+        # defaults to DB_USERNAME if not set.
+        - DB_HOST=db 
+        #<hostname>` defaults to "localhost" if not set.
+      #ports: 
+      #  - 8000:8000
+      expose: 
+        - 8000
+      depends_on:
+        - redis
+        - db
+      networks:
+        - redis
+        - proxybacknw
+        - proxyfrontnw
+      container_name: backend305c
+    frontend:
+      image: frontend305i
+#      hostname: frontend.colasloth.com
+      build:
+        context: ./frontend-example-docker
+        dockerfile: Dockerfile
+ #     environment:
+ #       - API_URL=http://proxy.colasloth.com:8000
+#        - API_URL=http://localhost:8000
+#        - API_URL=http://localhost:8000/api
+ #        - API_URL=http://localhost:80/api
+  #      - API_URL=http://backend:8000
+  #      - API_URL=/
+      expose:
+        - 5000
+#      ports: 
+#        - 5000:5000
+      depends_on: 
+        - backend
+      networks:
+        - proxyfrontnw
+        - proxybacknw
+      container_name: frontend305c
+    proxy: 
+      image: nginx305i
+      build: 
+        context: ./proxy
+        dockerfile: Dockerfile
+      #hostname: proxy
+      volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf:ro
+        - /var/run/docker.sock:/tmp/docker.sock:ro     
+        # nginx: [emerg] open() "/var/run/nginx.pid" failed (13: Permission denied) see nginx.conf too
+        - nginxlog:/var/log/nginx
+      ports:
+#        - 80:80    requires root in container for nginx
+        - 80:8080
+      depends_on:
+        - backend
+        - frontend
+      networks:
+        - proxyfrontnw
+        - proxybacknw
+      container_name: nginx305c
+networks:
+  redis:
+    driver: bridge
+  proxyfrontnw:
+      driver: bridge
+  proxybacknw:
+      driver: bridge
+volumes:
+  database:
+  redisdata:
+  nginxlog:
