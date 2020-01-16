@@ -448,4 +448,12 @@ view to frontend service in shell, see dist and node_modules only.
 
 ## [x] 3.06 Do all or most of the optimizations from security to size.
     TODO fix backend
-    
+
+![shot](./part3.06/optimized-images-306i.png)
+![shot](./part3.06/green_buttons-306.png)
+![shot](./part3.06/containers-306c.png)
+![shot](./part3.06/proxy-owner.png)
+![shot](./part3.06/front-owner.png)
+![shot](./part3.06/backend-owner.png)
+![shot](./part3.06/frontend-files.png)
+![shot](./part3.06/backend-files.png)
