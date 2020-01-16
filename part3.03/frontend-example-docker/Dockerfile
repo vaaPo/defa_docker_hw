@@ -21,12 +21,9 @@ RUN usermod -G dockerapp app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY ./package*json ./
-RUN chown -R app:dockerapp .
-RUN chown -R app:dockerapp ./*
 
 WORKDIR /usr/src/app
 
-USER app
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
@@ -34,6 +31,10 @@ RUN npm install
 # Bundle app source
 COPY . .
 EXPOSE 5000
+
+RUN chown -R app:dockerapp .
+RUN chown -R app:dockerapp ./*
+USER app
 
 # cors
 #ENV API_URL=http://localhost:8000
