@@ -362,5 +362,15 @@ Screenshot of working setup:
     Based on 2.10 setup move to app-user from root. I am using this to be able to exec to shell and see.
     Otherwise could do it based on 3.01.
 
+    configured for proxy, frontend, backend:
+        Non-root user: app
+        Non-rootl group: dockerapp
+### screenshots
+![shot](./non-root-system-green.png)
+![shot](./non-root-proxy.png)
+![shot](./non-root-frontend.png)
+![shot](./non-root-backend.png)
+### nginx log files omitted due stdout + postgres and redis
+
 
 

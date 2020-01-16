@@ -96,10 +96,12 @@ services:
       #hostname: proxy
       volumes:
         - ./nginx.conf:/etc/nginx/nginx.conf:ro
-        - /var/run/docker.sock:/tmp/docker.sock:ro 
+        - /var/run/docker.sock:/tmp/docker.sock:ro     
+        # nginx: [emerg] open() "/var/run/nginx.pid" failed (13: Permission denied) see nginx.conf too
         - nginxlog:/var/log/nginx
       ports:
-        - 80:80
+#        - 80:80    requires root in container for nginx
+        - 80:8080
       depends_on:
         - backend
         - frontend

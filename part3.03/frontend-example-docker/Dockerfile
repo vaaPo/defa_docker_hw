@@ -15,16 +15,20 @@ RUN useradd -m app
 RUN groupadd dockerapp
 RUN usermod -G dockerapp app
 
-
+WORKDIR /usr/src/app
+RUN chown -R app:dockerapp /usr/src/app
+RUN chmod u+rxw /usr/src/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-COPY ./package*json ./
 
-WORKDIR /usr/src/app
+COPY --chown=app:dockerapp ./package*json ./
+
+USER app
 
 RUN npm install
+
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -32,9 +36,10 @@ RUN npm install
 COPY . .
 EXPOSE 5000
 
-RUN chown -R app:dockerapp .
-RUN chown -R app:dockerapp ./*
-USER app
+#RUN chown -R app:dockerapp .
+#RUN chown -R app:dockerapp .*
+#RUN chown -R app:dockerapp ./*
+#USER app
 
 # cors
 #ENV API_URL=http://localhost:8000
