@@ -1,23 +1,33 @@
 # Filename: Dockerfile
-FROM ubuntu:latest
+#FROM ubuntu:latest
+FROM node:alpine
 LABEL maintainer="Docker student Paavo Muranen <paavo@muranen.fi>"
-RUN apt-get update
-RUN apt-get install -y build-essential apt-transport-https lsb-release ca-certificates curl sudo traceroute net-tools dnsutils inetutils-ping
+RUN apk add --update --no-cache shadow;
+RUN useradd -m app
+RUN groupadd dockerapp 
+RUN usermod -G dockerapp app
+RUN apk del shadow;
+WORKDIR /usr/src/app
+RUN chown -R app:dockerapp /usr/src/app && \
+    chmod -R ug+rxw /usr/src/app
+
+#RUN apt-get update
+#RUN apt-get install -y build-essential apt-transport-https lsb-release ca-certificates curl sudo traceroute net-tools dnsutils inetutils-ping
 
 # Using Ubuntu
-RUN sudo curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+#RUN sudo curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 #RUN sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-RUN sudo apt-get install -y nodejs
-RUN node -v && npm -v
+#RUN sudo apt-get install -y nodejs
+#RUN node -v && npm -v
 
 ## add mortal user
-RUN useradd -m app
-RUN groupadd dockerapp
-RUN usermod -G dockerapp app
+#RUN useradd -m app
+#RUN groupadd dockerapp
+#RUN usermod -G dockerapp app
 
-WORKDIR /usr/src/app
-RUN chown -R app:dockerapp /usr/src/app
-RUN chmod u+rxw /usr/src/app
+#WORKDIR /usr/src/app
+#RUN chown -R app:dockerapp /usr/src/app
+#RUN chmod u+rxw /usr/src/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
