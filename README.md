@@ -442,6 +442,6 @@ view to frontend service in shell, see dist and node_modules only.
     -rw-r--r--    1 app      dockerap    616952 Jan 16 21:26 vendors~main-1.css
     -rw-r--r--    1 app      dockerap    335561 Jan 16 21:26 vendors~main.js
 
-![shot](./part3.5/green-buttons-305.png)
-![shot](./part3.5/frontend-starts-onerow.png)
-![shot](./part3.5/frontend-service-shell-view-dist-305.png)
+![shot](./part3.05/green-buttons-305.png)
+![shot](./part3.05/frontend-starts-onerow.png)
+![shot](./part3.05/frontend-service-shell-view-dist-305.png)
