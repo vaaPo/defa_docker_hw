@@ -366,10 +366,10 @@ Screenshot of working setup:
         Non-root user: app
         Non-rootl group: dockerapp
 ### screenshots
-![shot](./non-root-system-green.png)
-![shot](./non-root-proxy.png)
-![shot](./non-root-frontend.png)
-![shot](./non-root-backend.png)
+![shot](./part3.03/non-root-system-green.png)
+![shot](./part3.03/non-root-proxy.png)
+![shot](./part3.03/non-root-frontend.png)
+![shot](./part3.03/non-root-backend.png)
 ### nginx log files omitted due stdout + postgres and redis
 
 
