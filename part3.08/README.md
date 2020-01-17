@@ -6,7 +6,7 @@
 
     [x] 1. Sign-up for Free Oracle Cloud
     [x] 2. Setup Autonomous Transaction Cloud (ATP)
-    [] 3. Connecting with SQL Developer (Desktop) to ATP
+    [x] 3. Connecting with SQL Developer (Desktop) to ATP
     [] 4. Connecting with SQL Developer Web to ATP
     [] 5. Setup APEX in ATP and create the first APEX app
     [] 6. Create a VM Instance (Compute Cloud)
