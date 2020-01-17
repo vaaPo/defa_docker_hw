@@ -1,16 +1,61 @@
 # defa_docker_hw
 Defa docker Homeworks, by Paavo Muranen
 
+
+- [defa_docker_hw](#defadockerhw)
+- [Tree - larger exercises have own directory or repository](#tree---larger-exercises-have-own-directory-or-repository)
+  - [[x] 2.2 Submit the docker-compose.yml, make sure that it works simply by running docker-compose up](#x-22-submit-the-docker-composeyml-make-sure-that-it-works-simply-by-running-docker-compose-up)
+  - [[x] 2.3 Submit the docker-compose.yml](#x-23-submit-the-docker-composeyml)
+  - [[x] 2.4 Your task is to scale the compute containers so that the button in the application turns green.](#x-24-your-task-is-to-scale-the-compute-containers-so-that-the-button-in-the-application-turns-green)
+  - [[x] 2.5 Add redis to example backend. Submit the docker-compose.yml](#x-25-add-redis-to-example-backend-submit-the-docker-composeyml)
+  - [[x] 2.6 Add database to example backend.](#x-26-add-database-to-example-backend)
+  - [[x] 2.7 Configure a machine learning project.](#x-27-configure-a-machine-learning-project)
+  - [[x] 2.8 Add nginx to example frontend + backend.](#x-28-add-nginx-to-example-frontend--backend)
+  - [[x] 2.9 Volumes for database and redis](#x-29-volumes-for-database-and-redis)
+    - [configured the redis.conf also](#configured-the-redisconf-also)
+  - [[x] 2.10 Make sure that every button for exercises works.](#x-210-make-sure-that-every-button-for-exercises-works)
+- [PART 3](#part-3)
+  - [[x] 3.01 Optimize dockerfiles and document changes](#x-301-optimize-dockerfiles-and-document-changes)
+    - [BEFORE 1716.0 Mb](#before-17160-mb)
+    - [AFTER 1515.9 Mb](#after-15159-mb)
+    - [optimization happens heredefa_docker_hw/part3.01](#optimization-happens-heredefadockerhwpart301)
+    - [AFTER](#after)
+  - [3.02 [x] optimize yle-dl](#302-x-optimize-yle-dl)
+    - [BEFORE](#before)
+    - [After](#after-1)
+  - [3.03 [x] Make sure the containers start their processes as a non-root user.](#303-x-make-sure-the-containers-start-their-processes-as-a-non-root-user)
+    - [screenshots](#screenshots)
+    - [nginx log files omitted due stdout + postgres and redis](#nginx-log-files-omitted-due-stdout--postgres-and-redis)
+  - [3.04 [x] Switch to node docker packages and document before and after sizes of frontend and backend](#304-x-switch-to-node-docker-packages-and-document-before-and-after-sizes-of-frontend-and-backend)
+    - [BEFORE *docker304 and AFTER *304i](#before-docker304-and-after-304i)
+    - [Remarks](#remarks)
+  - [[x] 3.05 Do a multi-stage build for the frontend project since we’ve come so far with the application.](#x-305-do-a-multi-stage-build-for-the-frontend-project-since-weve-come-so-far-with-the-application)
+  - [[x] 3.06 Do all or most of the optimizations from security to size.](#x-306-do-all-or-most-of-the-optimizations-from-security-to-size)
+
 # Tree - larger exercises have own directory or repository
 
 ```code
-$ tree
+paavo@silber:~/defa/defa_docker_hw$ tree -L 2
 .
+├── part1.10
+│   └── Dockerfile
+├── part1.11
+│   ├── Dockerfile
+│   └── README.md
+├── part1.12
+│   ├── backend
+│   ├── frontend
+│   └── frontend-112-test.png
+├── part1.13
+│   ├── Dockerfile
+│   └── spring_113_build_run_test.png
+├── part1.14
+│   ├── Dockerfile
+│   └── rails-build-run-test.png
 ├── part1.5
 │   ├── Dockerfile
 │   ├── README.md
 │   └── src
-│       └── run_part1.5.sh
 ├── part1.6
 │   ├── Dockerfile
 │   ├── Dockerfile~
@@ -19,15 +64,178 @@ $ tree
 │   ├── Dockerfile
 │   ├── README.md
 │   └── src
-│       └── run_part1.7.sh
 ├── part1.8
 │   ├── log
-│   │   └── logs.txt
 │   └── README.md
-└── README.md
-
-7 directories, 12 files
-```
+├── part2.1
+│   └── first_volume_exercise
+├── part2.10
+│   ├── adminer-defadockerdb-210.png
+│   ├── adminer-select-messages-2.6.png
+│   ├── backend-example-docker
+│   ├── backend-exec-210.png
+│   ├── container-hostname-reverse-proxy-problem.png
+│   ├── db-2.6.png
+│   ├── docker-compose-containers-networks-volumes-210.png
+│   ├── docker-compose.yml
+│   ├── docker_exec-sh_redis_data_AOF.png
+│   ├── frontend-example-docker
+│   ├── green-buttons_2.10.png
+│   ├── nginx.conf
+│   ├── nginx_proxy_access_log210.png
+│   ├── nginx-proxy-errorlog-info-210.png
+│   ├── nginx-proxy-exec-210.png
+│   ├── proxy
+│   ├── psql-vs-adminer.png
+│   ├── README.md
+│   ├── redis-cli_add_keys.png
+│   ├── redis-cli-MONITOR.png
+│   ├── redis.conf
+│   ├── redis-data-vol.png
+│   └── redis_monitor_for_AOF.png
+├── part2.2
+│   └── ports_exercise
+├── part2.3
+│   ├── backend-example-docker
+│   ├── compose-frontend-backend-2.3-test.png
+│   ├── docker-compose.yml
+│   ├── frontend-example-docker
+│   └── README.md
+├── part2.4
+│   ├── AFTER-scaled-10-compute.png
+│   ├── BEFORE-non-scaled-2.4.png
+│   ├── docker-compose.yml
+│   ├── README.md
+│   ├── scaling-exercise
+│   └── scaling_to_200_controlc_death.png
+├── part2.5
+│   ├── backend-example-docker
+│   ├── docker-compose.yml
+│   ├── frontend-example-docker
+│   ├── README.md
+│   └── redis-2.5.png
+├── part2.6
+│   ├── adminer-select-messages-2.6.png
+│   ├── backend-example-docker
+│   ├── db-2.6.png
+│   ├── docker-compose.yml
+│   ├── frontend-example-docker
+│   ├── psql-vs-adminer.png
+│   └── README.md
+├── part2.7
+│   ├── 250px-ZiD-50-Pilot.jpg
+│   ├── concombre_306758660.png
+│   ├── docker-compose.yml
+│   ├── machine_learning-2.7.png
+│   ├── ml-kurkkumopo-backend
+│   ├── ml-kurkkumopo-frontend
+│   ├── ml-kurkkumopo-training
+│   └── README.md
+├── part2.8
+│   ├── adminer-select-messages-2.6.png
+│   ├── backend-example-docker
+│   ├── db-2.6.png
+│   ├── docker-compose.yml
+│   ├── frontend-example-docker
+│   ├── hello.html
+│   ├── nginx.conf
+│   ├── nginx-proxy-2.8.png
+│   ├── psql-vs-adminer.png
+│   ├── README.md
+│   └── world.html
+├── part2.9
+│   ├── adminer-select-messages-2.6.png
+│   ├── backend-example-docker
+│   ├── db-2.6.png
+│   ├── docker-compose.yml
+│   ├── docker_exec-sh_redis_data_AOF.png
+│   ├── frontend-example-docker
+│   ├── psql-vs-adminer.png
+│   ├── README.md
+│   ├── redis-cli_add_keys.png
+│   ├── redis-cli-MONITOR.png
+│   ├── redis.conf
+│   ├── redis-data-vol.png
+│   └── redis_monitor_for_AOF.png
+├── part3.01
+│   ├── backend-example-docker
+│   ├── docker-compose.yml
+│   ├── frontend-example-docker
+│   ├── nginx.conf
+│   ├── proxy
+│   ├── README.md
+│   └── redis.conf
+├── part3.02
+│   ├── Dockerfile
+│   └── README.md
+├── part3.03
+│   ├── adminer-defadockerdb-210.png
+│   ├── adminer-select-messages-2.6.png
+│   ├── backend-example-docker
+│   ├── backend-exec-210.png
+│   ├── container-hostname-reverse-proxy-problem.png
+│   ├── db-2.6.png
+│   ├── docker-compose-containers-networks-volumes-210.png
+│   ├── docker-compose.yml
+│   ├── docker_exec-sh_redis_data_AOF.png
+│   ├── frontend-example-docker
+│   ├── green-buttons_2.10.png
+│   ├── nginx.conf
+│   ├── nginx_proxy_access_log210.png
+│   ├── nginx-proxy-errorlog-info-210.png
+│   ├── nginx-proxy-exec-210.png
+│   ├── non-root-backend.png
+│   ├── non-root-frontend.png
+│   ├── non-root-proxy.png
+│   ├── non-root-system-green.png
+│   ├── proxy
+│   ├── psql-vs-adminer.png
+│   ├── README.md
+│   ├── redis-cli_add_keys.png
+│   ├── redis-cli-MONITOR.png
+│   ├── redis.conf
+│   ├── redis-data-vol.png
+│   └── redis_monitor_for_AOF.png
+├── part3.04
+│   ├── AFTER-front213-back115.png
+│   ├── backend-example-docker
+│   ├── BEFORE_from_images.png
+│   ├── before-ubuntu-based-304.png
+│   ├── docker-compose.yml
+│   ├── FROM-images-iterations.png
+│   ├── frontend-example-docker
+│   ├── nginx.conf
+│   ├── proxy
+│   ├── README.md
+│   └── redis.conf
+├── part3.05
+│   ├── backend-example-docker
+│   ├── docker-compose.yml
+│   ├── frontend-example-docker
+│   ├── frontend-service-shell-view-dist-305.png
+│   ├── frontend-starts-onerow.png
+│   ├── green-buttons-305.png
+│   ├── nginx.conf
+│   ├── proxy
+│   ├── README.md
+│   └── redis.conf
+├── part3.06
+│   ├── backend-example-docker
+│   ├── backend-files.png
+│   ├── backend-owner.png
+│   ├── containers-306c.png
+│   ├── docker-compose.yml
+│   ├── frontend-example-docker
+│   ├── frontend-files.png
+│   ├── front-owner.png
+│   ├── green_buttons-306.png
+│   ├── nginx.conf
+│   ├── optimized-images-306i.png
+│   ├── proxy
+│   ├── proxy-owner.png
+│   ├── README.md
+│   └── redis.conf
+└── README.md```
 
 # PART 1
 
@@ -447,8 +655,21 @@ view to frontend service in shell, see dist and node_modules only.
 ![shot](./part3.05/frontend-service-shell-view-dist-305.png)
 
 ## [x] 3.06 Do all or most of the optimizations from security to size.
-    TODO fix backend
 
+    - docker installed in host operating system so that no sudo needed to run docker-commands
+    - define httpd 80 port in docker-compose.yml - while nginx proxy is in 8080, non-privileged port
+    - use app-user in group dockerapp to run services: proxy, frontend, backend
+    - all files copied and created during build and launch are owned by app-user
+      - no root owned files
+    - postgres and redis databases survives up-down cycles and data persists
+      - related volumes have human-readable names part306_database, part306_redisdata
+    - frontend and backend are multistage built
+      - they have phases: BASE node, DEPENDENCIES, TEST, RELEASE
+      - in RELEASE minimal set of files and directories required to run/serve the service
+      - 1/6 size of frontend/backend images due optimization and use of alpine/node
+    - redis doesnt have password
+    - password files with obfuscation are not used
+  - 
 ![shot](./part3.06/optimized-images-306i.png)
 ![shot](./part3.06/green_buttons-306.png)
 ![shot](./part3.06/containers-306c.png)
