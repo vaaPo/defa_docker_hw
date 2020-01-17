@@ -4,11 +4,17 @@
     https://dgielis.blogspot.com/2019/09/best-and-cheapest-oracle-apex-hosting.html
 
 
-    [x] 1. Sign-up for Free Oracle Cloud
-    [x] 2. Setup Autonomous Transaction Cloud (ATP)
-    [x] 3. Connecting with SQL Developer (Desktop) to ATP
-    [] 4. Connecting with SQL Developer Web to ATP
-    [] 5. Setup APEX in ATP and create the first APEX app
+## [x] 1. Sign-up for Free Oracle Cloud
+## [x] 2. Setup Autonomous Transaction Cloud (ATP)
+## [x] 3. Connecting with SQL Developer (Desktop) to ATP
+![shot](./STEP3-Always-free-Oracle-Cloud-ATP-admin-via-desktop-SqlDeveloper.png)
+
+## [x] 4. Connecting with SQL Developer Web to ATP
+![shot](./STEP4-web-sqldeveloper-to-ATP-db.png)
+
+## [x] 5. Setup APEX in ATP and create the first APEX app
+![shot](./STEP5-apex-workspace-and-app.png)
+
     [] 6. Create a VM Instance (Compute Cloud)
     [] 7. Setup a Webserver on the Compute Instance (VM)
     [] 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text
