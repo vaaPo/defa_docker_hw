@@ -18,7 +18,10 @@
 ## [] 6. Create a VM Instance (Compute Cloud)
 ![shot](./STEP6-vm-instance-ssh-works.png)
 
-    [] 7. Setup a Webserver on the Compute Instance (VM)
+## [x] 7. Setup a Webserver on the Compute Instance (VM)
+installed nginx, configured fw and added ingressrules to virtual cloud security lists
+![shot](./STEP7-nginx-fw-instance-ingressrules.png)
+
     [] 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text
     [] 9. Setup Object Storage and use for File Share and Backups
     [] 10. Running SQLcl and Datapump from the Compute Instance (VM) to ATP
