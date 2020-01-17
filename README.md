@@ -709,3 +709,5 @@ view to frontend service in shell, see dist and node_modules only.
 ![shot](./part3.06/backend-owner.png)
 ![shot](./part3.06/frontend-files.png)
 ![shot](./part3.06/backend-files.png)
+
+## [x] 3.07 Article about when to use Docker and what are the benefits
