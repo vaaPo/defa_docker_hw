@@ -11,6 +11,7 @@ First couple of definitions for the casual reader:
 +----------+------------------------------------------------------------+-------------------------------------------------+-----+-----+
 
 ## When to use Docker Checklist
+
 If you answer yes to 3 questions, then Docker can be recommended ?
 
 [ ] 1. Do you have heterogenous environment consisting of several operating systems e.g. for development, testing and production?
