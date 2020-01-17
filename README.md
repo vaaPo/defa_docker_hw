@@ -718,3 +718,8 @@ view to frontend service in shell, see dist and node_modules only.
 
 ## [x] 3.08 Create an example setup that uses Kubernetes, Docker Swarm or equivalent using any project and deploy it online.
 
+After furious hacking deployed to https://www.muranen.eu/
+    Done with docker-compose up.
+    Swarms and kubernetes to be investigated.
+    
+![shot](./greenbuttons-www.muranen.eu.png)
