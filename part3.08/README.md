@@ -15,7 +15,9 @@
 ## [x] 5. Setup APEX in ATP and create the first APEX app
 ![shot](./STEP5-apex-workspace-and-app.png)
 
-    [] 6. Create a VM Instance (Compute Cloud)
+## [] 6. Create a VM Instance (Compute Cloud)
+![shot](./STEP6-vm-instance-ssh-works.png)
+
     [] 7. Setup a Webserver on the Compute Instance (VM)
     [] 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text
     [] 9. Setup Object Storage and use for File Share and Backups
