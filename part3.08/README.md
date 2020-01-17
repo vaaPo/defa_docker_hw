@@ -3,6 +3,7 @@
     Lets see what Oracle free cloud gives.
     https://dgielis.blogspot.com/2019/09/best-and-cheapest-oracle-apex-hosting.html
 
+![shot](./greenbuttons-www.muranen.eu.png)
 
 ## [x] 1. Sign-up for Free Oracle Cloud
 ## [x] 2. Setup Autonomous Transaction Cloud (ATP)
@@ -64,6 +65,17 @@ https://community.oracle.com/blogs/mahmoudrabie/2019/03/06/installing-docker-ce-
     
     Hello from Docker!
 
+# [] install docker-compose
+
+# [x] install git
+    whmmm...phhh
+    https://oracle-base.com/articles/linux/git-2-installation-on-linux
+
+# [x] make docker from sqlcl
+
+https://github.com/martindsouza/docker-oracle-sqlcl
+
+https://www.oracle.com/tools/downloads/sqlcl-downloads.html
 
 https://docs.docker.com/v17.09/engine/installation/linux/docker-ee/oracle/
     Docker Community Edition (Docker CE) is not supported on Oracle Linux.
