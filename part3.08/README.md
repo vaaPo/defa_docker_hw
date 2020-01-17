@@ -15,7 +15,7 @@
 ## [x] 5. Setup APEX in ATP and create the first APEX app
 ![shot](./STEP5-apex-workspace-and-app.png)
 
-## [] 6. Create a VM Instance (Compute Cloud)
+## [x] 6. Create a VM Instance (Compute Cloud)
 ![shot](./STEP6-vm-instance-ssh-works.png)
 
 ## [x] 7. Setup a Webserver on the Compute Instance (VM)
