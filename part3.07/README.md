@@ -8,7 +8,6 @@ First couple of definitions for the casual reader:
 |          | 1.) is tool for creating, deploying and running containers |                                                 |     |     |
 |          | 2.) is standardized way to package software to containers  |                                                 |     |     |
 |          | 3.) is container engine to run containers on top of OS     | https://www.docker.com/resources/what-container |     |     |
-+----------+------------------------------------------------------------+-------------------------------------------------+-----+-----+
 
 ## When to use Docker Checklist
 
