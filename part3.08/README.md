@@ -25,6 +25,8 @@ installed nginx, configured fw and added ingressrules to virtual cloud security 
 fixed dns and homepage for http://www.muranen.eu/
 ![shot](./STEP7-fix-dns-and-homepage.png)
 
+fixed ssl cert and forced https
+![shot](./STEP7-ssl-force-https.png)
 
 ## [] 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text
 
