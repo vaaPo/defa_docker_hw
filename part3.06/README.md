@@ -16,6 +16,18 @@
 
     Functionality is still the same as in 2.10 exercise:
 
+## Before After diffs
+    
+    See part2.10:
+        docker-compose.yml
+        Dockerfile(s)
+![shot](./part3.06/../BEFORE_AFTER-docker-compose-01.png)
+![shot](./part3.06/../before-after-docker-compose-backend-2.png)
+![shot](./part3.06/../before-after-dockerfile-proxy.png)
+![shot](./part3.06/../before-after-frontend-proxy-.png)
+![shot](./part3.06/../before-after-multistaged-etc-docker-frontend.png)
+![shot](./part3.06/../before-after-multistaged-dockerfile-frontend-part2.png)
+
 
 ## screenshots
 ![shot](./optimized-images-306i.png)
