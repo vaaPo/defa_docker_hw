@@ -22,7 +22,12 @@
 installed nginx, configured fw and added ingressrules to virtual cloud security lists
 ![shot](./STEP7-nginx-fw-instance-ingressrules.png)
 
-    [] 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text
+fixed dns and homepage for http://www.muranen.eu/
+![shot](./STEP7-fix-dns-and-homepage.png)
+
+
+## [] 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text
+
     [] 9. Setup Object Storage and use for File Share and Backups
     [] 10. Running SQLcl and Datapump from the Compute Instance (VM) to ATP
     [] 11. Sending Emails with APEX_MAIL on ATP
