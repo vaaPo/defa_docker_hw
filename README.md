@@ -673,12 +673,12 @@ view to frontend service in shell, see dist and node_modules only.
       See part2.10:
         docker-compose.yml
         Dockerfile(s)
-![shot](./part3.06/../BEFORE_AFTER-docker-compose-01.png)
-![shot](./part3.06/../before-after-docker-compose-backend-2.png)
-![shot](./part3.06/../before-after-dockerfile-proxy.png)
-![shot](./part3.06/../before-after-frontend-proxy-.png)
-![shot](./part3.06/../before-after-multistaged-etc-docker-frontend.png)
-![shot](./part3.06/../before-after-multistaged-dockerfile-frontend-part2.png)
+![shot](./part3.06/BEFORE_AFTER-docker-compose-01.png)
+![shot](./part3.06/before-after-docker-compose-backend-2.png)
+![shot](./part3.06/before-after-dockerfile-proxy.png)
+![shot](./part3.06/before-after-frontend-proxy-.png)
+![shot](./part3.06/before-after-multistaged-etc-docker-frontend.png)
+![shot](./part3.06/before-after-multistaged-dockerfile-frontend-part2.png)
 
 ![shot](./part3.06/optimized-images-306i.png)
 ![shot](./part3.06/green_buttons-306.png)
