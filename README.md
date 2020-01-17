@@ -51,6 +51,8 @@ Defa docker Homeworks, by Paavo Muranen
     - [Remarks](#remarks)
   - [[x] 3.05 Do a multi-stage build for the frontend project since we’ve come so far with the application.](#x-305-do-a-multi-stage-build-for-the-frontend-project-since-weve-come-so-far-with-the-application)
   - [[x] 3.06 Do all or most of the optimizations from security to size.](#x-306-do-all-or-most-of-the-optimizations-from-security-to-size)
+  - [[x] 3.07 Article about when to use Docker and what are the benefits](#x-307-article-about-when-to-use-docker-and-what-are-the-benefits)
+  - [[x] 3.08 Create an example setup that uses Kubernetes, Docker Swarm or equivalent using any project and deploy it online.](#x-308-create-an-example-setup-that-uses-kubernetes-docker-swarm-or-equivalent-using-any-project-and-deploy-it-online)
 
 # Tree - larger exercises have own directory or repository
 
@@ -711,3 +713,8 @@ view to frontend service in shell, see dist and node_modules only.
 ![shot](./part3.06/backend-files.png)
 
 ## [x] 3.07 Article about when to use Docker and what are the benefits
+
+    See part3.07 README.md
+
+## [x] 3.08 Create an example setup that uses Kubernetes, Docker Swarm or equivalent using any project and deploy it online.
+
