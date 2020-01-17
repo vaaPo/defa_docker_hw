@@ -721,5 +721,5 @@ view to frontend service in shell, see dist and node_modules only.
 After furious hacking deployed to https://www.muranen.eu/
     Done with docker-compose up.
     Swarms and kubernetes to be investigated.
-    
-![shot](./greenbuttons-www.muranen.eu.png)
+
+![shot](./part3.08/greenbuttons-www.muranen.eu.png)
