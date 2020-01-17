@@ -28,6 +28,8 @@ fixed dns and homepage for http://www.muranen.eu/
 fixed ssl cert and forced https
 ![shot](./STEP7-ssl-force-https.png)
 
+Oracle Apex works in https://www.muranen.eu/ords/
+
 ## [] 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text
 
     [] 9. Setup Object Storage and use for File Share and Backups
