@@ -4,6 +4,26 @@ Defa docker Homeworks, by Paavo Muranen
 
 - [defa_docker_hw](#defadockerhw)
 - [Tree - larger exercises have own directory or repository](#tree---larger-exercises-have-own-directory-or-repository)
+- [PART 1](#part-1)
+  - [[x] 1.1 Prove that you have completed this part of exercise by delivering the output for docker ps -a.](#x-11-prove-that-you-have-completed-this-part-of-exercise-by-delivering-the-output-for-docker-ps--a)
+  - [[x] 1.2 Prove that you have completed this part of exercise by delivering the output for docker ps -a and docker images](#x-12-prove-that-you-have-completed-this-part-of-exercise-by-delivering-the-output-for-docker-ps--a-and-docker-images)
+  - [[x] 1.3 Submit the secret message and command(s) given to get it as your answer.](#x-13-submit-the-secret-message-and-commands-given-to-get-it-as-your-answer)
+  - [[x] 1.4 Submit the secret message and command(s) given as your answer.](#x-14-submit-the-secret-message-and-commands-given-as-your-answer)
+  - [[x] 1.5 Dockerfile(s) and the command](#x-15-dockerfiles-and-the-command)
+  - [[x] 1.6 Add a CMD line to the Dockerfile and tag it as “docker-clock” so that docker run docker-clock starts the application and the clock output](#x-16-add-a-cmd-line-to-the-dockerfile-and-tag-it-as-docker-clock-so-that-docker-run-docker-clock-starts-the-application-and-the-clock-output)
+  - [[x] 1.7 Run command docker run [options] curler (with correct flags again, as in 1.5) and input helsinki.fi into it. Output should match the 1.5 one.](#x-17-run-command-docker-run-options-curler-with-correct-flags-again-as-in-15-and-input-helsinkifi-into-it-output-should-match-the-15-one)
+  - [[x] 1.8 Submit your used commands for this exercise.](#x-18-submit-your-used-commands-for-this-exercise)
+  - [[x] 1.9 Submit your used commands for this exercise.](#x-19-submit-your-used-commands-for-this-exercise)
+  - [[x] 1.10 Submit the Dockerfile. your used commands for this exercise.](#x-110-submit-the-dockerfile-your-used-commands-for-this-exercise)
+  - [[x] 1.11 Submit the Dockerfile. your used commands for this exercise.](#x-111-submit-the-dockerfile-your-used-commands-for-this-exercise)
+  - [[x] 1.12 Submit the Dockerfiles. your used commands for this exercise.](#x-112-submit-the-dockerfiles-your-used-commands-for-this-exercise)
+  - [[x] 1.13 You’ve completed the exercise when you see a ‘Success’ message in your browser.](#x-113-youve-completed-the-exercise-when-you-see-a-success-message-in-your-browser)
+  - [[x] 1.14 You’ve completed the exercise when the application works in your browser.](#x-114-youve-completed-the-exercise-when-the-application-works-in-your-browser)
+  - [[x] 1.15 provide the link to the project in docker hub,  how to run the application in a README](#x-115-provide-the-link-to-the-project-in-docker-hub-how-to-run-the-application-in-a-readme)
+  - [[x] 1.16 For this exercise return the url in which the released application is.](#x-116-for-this-exercise-return-the-url-in-which-the-released-application-is)
+  - [[x] 1.17 Explain what you created and publish it to Docker Hub.](#x-117-explain-what-you-created-and-publish-it-to-docker-hub)
+- [PART 2](#part-2)
+  - [[x] 2.1 Submit the docker-compose.yml, make sure that it works simply by running docker-compose up](#x-21-submit-the-docker-composeyml-make-sure-that-it-works-simply-by-running-docker-compose-up)
   - [[x] 2.2 Submit the docker-compose.yml, make sure that it works simply by running docker-compose up](#x-22-submit-the-docker-composeyml-make-sure-that-it-works-simply-by-running-docker-compose-up)
   - [[x] 2.3 Submit the docker-compose.yml](#x-23-submit-the-docker-composeyml)
   - [[x] 2.4 Your task is to scale the compute containers so that the button in the application turns green.](#x-24-your-task-is-to-scale-the-compute-containers-so-that-the-button-in-the-application-turns-green)
@@ -235,7 +255,8 @@ paavo@silber:~/defa/defa_docker_hw$ tree -L 2
 │   ├── proxy-owner.png
 │   ├── README.md
 │   └── redis.conf
-└── README.md```
+└── README.md
+```
 
 # PART 1
 
